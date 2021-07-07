@@ -106,115 +106,115 @@ export const skills = [
 	},
 	{
 		name: 'Three.js'
-		desc: '',
+		desc: 'I have built a couple personal projects with this library, and enjoy messing around with it to learn what I can.',
 		level: 'Advanced',
 		category: 'libraries'
 	},
 	{
 		name: 'regex'
-		desc: '',
+		desc: 'I have used regex enough to understand its limitations, and am comfortable crafting expressions on the fly.',
 		level: 'Advanced',
 		category: 'libraries'
 	},
 	{
 		name: 'JSON'
-		desc: '',
+		desc: 'I have built and interacted with JSON-based APIs quite frequently, both professionally and in personal projects.',
 		level: 'Advanced',
 		category: 'libraries'
 	},
 	{
 		name: 'Slack'
-		desc: '',
+		desc: 'I am comfortable communicating via Slack and similar chat services, and have used it for both large and small groups.',
 		level: 'Advanced',
 		category: 'tools'
 	},
 	{
 		name: 'Jira'
-		desc: '',
+		desc: 'I have used the Jira suite professionally, and as a acting project lead became very familiar with managing this system.',
 		level: 'Advanced',
 		category: 'tools'
 	},
 	{
 		name: 'Inkscape'
-		desc: '',
+		desc: 'I have used Inkscape for fun since I was a child, and for simple graphic design work intermittently, such as putting together posters for school orgs, building detailed mock-ups of new UX, and even creating some new icons.',
 		level: 'Advanced',
 		category: 'tools'
 	},
 	{
 		name: 'HCI'
-		desc: '',
+		desc: 'I have taken a graduate level survey course on Human-Computer Interaction, and have experience basing my technical discussions and feedback on research-backed principles.',
 		level: 'Advanced',
-		category: 'tools'
+		category: 'concepts'
 	},
 	{
 		name: 'Python'
-		desc: '',
+		desc: 'I was taught Python in university, and have used it for simpler personal project and in the workplace. It has never been my primary language, so being productive in it is a process that still involves a lot of googling for syntax. In a vacuum, Python is my preferred language for CLI scripting.',
 		level: 'Functional',
 		category: 'languages'
 	},
 	{
 		name: 'Bash'
-		desc: '',
+		desc: 'I have read, modified, and created Bash scripts regularly at my job, and often find myself writing small ones to solve CLI problems. I have experience with other shells as well, but feel most comfortable in Bash.',
 		level: 'Functional',
 		category: 'tools'
 	},
 	{
 		name: 'MySQL'
-		desc: '',
+		desc: 'I learned the concepts in my undergraduate DB course, and I have used MySQL professionally. I am comfortable designing simple databases in UML, setting them up locally, and reading and writing in a variety of programming languages / frameworks.',
 		level: 'Functional',
 		category: 'libraries'
 	},
 	{
 		name: 'PostgreSQL'
-		desc: '',
+		desc: 'I have used PostgreSQL considerably less than MySQL, but have used it on a personal project, and would be excited to become more familiar with it.',
 		level: 'Functional',
 		category: 'libraries'
 	},
 	{
 		name: 'Node.js'
-		desc: '',
+		desc: 'I used Node.js in the backend component for my Bellum.ai personal project, and have used the npm ecosystem extensively both personally and professionally.',
 		level: 'Functional',
 		category: 'libraries'
 	},
 	{
 		name: 'Express.js'
-		desc: '',
+		desc: 'I used Node.js in the backend component for my Bellum.ai personal project, which involved setting up a straightforward RESTful API.',
 		level: 'Functional',
 		category: 'libraries'
 	},
 	{
 		name: 'D3.js'
-		desc: '',
+		desc: 'I have used D3 in a variety of professional and personal contexts, both wrapped in other libraries, and on its own. I am far from an expert, but feel confident I could spin up quickly on new applications of this technology.',
 		level: 'Functional',
 		category: 'libraries'
 	},
 	{
 		name: 'C#'
-		desc: '',
+		desc: 'I used C# for my undergraduate senior project (a Unity 3D application), and although I don\'t feel confident on the syntax these days, I suspect I could spin up quickly in a C# codebase.',
 		level: 'Functional',
 		category: 'languages'
 	},
 	{
 		name: 'REST'
-		desc: '',
+		desc: 'I have built and interacted with a large variety of RESTful APIs, and feel I have a fairly strong grasp on the underlying concepts.',
 		level: 'Advanced',
 		category: 'libraries'
 	},
 	{
 		name: 'WebSockets'
-		desc: '',
+		desc: 'I have used WebSockets extensively, and am intimately familiar with the tradeoffs between this approach and making HTML requests.',
 		level: 'Advanced',
 		category: 'libraries'
 	},
 	{
 		name: 'satellite.js'
-		desc: '',
+		desc: 'I have used this library for simple orbitology tasks, and would relish the opportunity to use this more in a future role.',
 		level: 'Functional',
 		category: 'libraries'
 	},
 	{
 		name: 'GMSEC'
-		desc: '',
+		desc: 'I have built many components that communicate via the GMSEC bus, and feel I understand the ',
 		level: 'Functional',
 		category: 'libraries'
 	},
