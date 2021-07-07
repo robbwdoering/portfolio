@@ -10,6 +10,15 @@ export const employment = [
 			'Owned implementation of systems used by many government satellite programs, contributing to an essential piece of the Naval Research Laboratory’s response to specific DoD-wide standardization and modernization mandates for space related software.',
 			'Regularly and deeply involved in testing, such as being tapped to bring Jest unit tests to an existing code base, or design and lead implementation of plans for functional testing.',
 		]
+	},
+	{
+		title: 'Automation Tools Intern',
+		company: 'Fujitsu Network Communications',
+		dates: 'May 2018 - August 2018',
+		bullets: [
+			'Worked on an internal web tool for ~50 project managers to complete a new procedure and collect a large volume of data for executive analysis using Java, Spring MVC, and Javascript.',
+			'Was responsible for carrying out the full software engineering process, from talking to stakeholders in order to craft the SRS document through implementation and feedback.'
+		]
 	}
 ];
 
