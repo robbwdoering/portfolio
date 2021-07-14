@@ -1,8 +1,9 @@
 export const employment = [
 	{
 		title: 'Software Engineer II',
-		company: 'Space Ground Systems Solutions',
+		name: 'Space Ground Systems Solutions',
 		dates: 'June 2019 - July 2021',
+		blurb: 'Developed full stack web applications, got project lead experience.',
 		bullets: [
 			'Worked on a web application for space-ground command & control systems, using React w/ Redux, Java, and C++ to display & interact with high latency,  error sensitive ground site information',
 			'Chosen to fill in as project lead during a 3-month planned leave of absence for a team of 6 other full time engineers. Responsible for leading Agile ceremonies, clearing blockers, meeting with stakeholders, UX and system design for new features, designing and delivering training, and more.',
@@ -13,8 +14,9 @@ export const employment = [
 	},
 	{
 		title: 'Automation Tools Intern',
-		company: 'Fujitsu Network Communications',
+		name: 'Fujitsu Network Communications',
 		dates: 'May 2018 - August 2018',
+		blurb: 'Planned and implemented basic full stack web tool for data collection.',
 		bullets: [
 			'Worked on an internal web tool for ~50 project managers to complete a new procedure and collect a large volume of data for executive analysis using Java, Spring MVC, and Javascript.',
 			'Was responsible for carrying out the full software engineering process, from talking to stakeholders in order to craft the SRS document through implementation and feedback.'
@@ -27,7 +29,8 @@ export const projects = [
 		name: 'Origami Odyssey',
 		link: 'https://github.com/robbwdoering/origamiodyssey',
 		sourceLink: 'https://origamiodyssey.herokuapp.com/',
-		summary: 'A React SPA built to teach origami, the art of folding paper. It uses animated 3D simulations with temporal & spatial controls, hierarchical annotations of folds, and hobbyist augmentations to improve learner performance on audience specific self-assessments. Each specific method in that sentence is supported by research I did as part of GaTech’s CS6460: Educational Technology.',
+		blurb: 'Built a React webapp that teaches origami using 3D simulations.',
+		desc: 'A React SPA built to teach origami, the art of folding paper. It uses animated 3D simulations with temporal & spatial controls, hierarchical annotations of folds, and hobbyist augmentations to improve learner performance on audience specific self-assessments. Each specific method in that sentence is supported by research I did as part of GaTech’s CS6460: Educational Technology.',
 		technologies: [
 			'Javascript', 'React', 'Redux', 'Three.js', 'react-three-fiber', 'Material-UI'
 		]
@@ -35,14 +38,16 @@ export const projects = [
 	{
 		name: 'Bellum.ai',
 		link: 'https://github.com/robbwdoering/bellum.ai',
-		summary: '[IN PROGRESS] A React SPA built to provide tools for the notoriously complex tabletop wargame, Warhammer 40k. It uses 3D simulation of the board, complex statistical modeling and analysis, and customizable visualizations to ease and speed along the game. This required a regex parser to read complex “army lists” into json objects for manipulation using a rules-translation schema I designed.',
+		desc: '[IN PROGRESS] A React SPA built to provide tools for the notoriously complex tabletop wargame, Warhammer 40k. It uses 3D simulation of the board, complex statistical modeling and analysis, and customizable visualizations to ease and speed along the game. This required a regex parser to read complex “army lists” into json objects for manipulation using a rules-translation schema I designed.',
+		blurb: 'Building a React webapp to teach and analyse a complex boardgame called Warhammer 40k.',
 		technologies: [
 			'Javascript', 'React', 'Redux', 'Three.js', 'react-three-fiber', 'D3.js', 'Auth0', 'Semantic UI'
 		]
-	}
+	},
 	{
 		name: 'Data Visualization in VR',
-		summary: 'For my Vanderbilt senior project, I worked with a professor on his research quantifying the benefits of visualizing, selecting, and creating data in VR over 2D options.',
+		desc: 'For my Vanderbilt senior project, I worked with a professor on his research quantifying the benefits of visualizing, selecting, and creating data in VR over 2D options.',
+		blurb: 'Built research tools in Unity for quantifying the benefits of VR tech.',
 		technologies: [
 			'C#', 'Unity', 'Oculus', 'Blender'
 		]
@@ -195,8 +200,8 @@ export const skills = [
 		category: 'libraries'
 	},
 	{
-		name: 'Node.js',
-		desc: 'I used Node.js in the backend component for my Bellum.ai personal project, and have used the npm ecosystem extensively both personally and professionally.',
+		name: 'Next.js',
+		desc: 'I used Next.js in the backend component for my Bellum.ai personal project, and have used the npm ecosystem extensively both personally and professionally.',
 		level: 'Functional',
 		category: 'libraries'
 	},
@@ -228,12 +233,6 @@ export const skills = [
 		name: 'WebSockets',
 		desc: 'I have used WebSockets extensively, and am intimately familiar with the tradeoffs between this approach and making HTML requests.',
 		level: 'Advanced',
-		category: 'libraries'
-	},
-	{
-		name: 'satellite.js',
-		desc: 'I have used this library for simple orbitology tasks, and would relish the opportunity to use this more in a future role.',
-		level: 'Functional',
 		category: 'libraries'
 	},
 	{
@@ -302,6 +301,7 @@ export const education = [
 	{
 		name: 'Vanderbilt University',
 		date: 'Spring 2019',
+		blurb: 'B.S. in Computer Science',
 		bullets: [
 			'Earned a B.S. in Computer Science, with minors in Spanish and Philosophy.',
 			'Served as an executive for the Vanderbilt Data Science club and the Wilderness Skills 101 organization.'
@@ -310,8 +310,32 @@ export const education = [
 	{
 		name: 'Georgia Institute of Technology',
 		date: 'EXPECTED Fall 2022',
+		blurb: 'Ongoing M.S. in Computer Science, specialized in Interactive Intelligence',
 		bullets: [
 			'Currently pursuing an online M.S. in Computer Science, with a specialization in Interactive Intelligence.'
 		]
 	}
 ];
+
+export const contactLines = [
+	{
+		name: 'robbwdoering@gmail.com',
+		href: 'mailto:robbwdoering@gmail.com',
+		icon: 'mail'
+	},
+	{
+		name: 'LINKEDIN',
+		href: 'https://www.linkedin.com/in/robb-doering-84165912a/',
+		icon: 'linkedin'
+	},
+	{
+		name: 'GITHUB',
+		href: 'https://github.com/robbwdoering',
+		icon: 'github'
+	}
+];
+
+export const levelBlurbs = {
+	Functional: 'I have worked with these...',
+	Advanced: 'I have worked extensively with these...'
+};

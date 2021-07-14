@@ -1,38 +1,182 @@
-.App {
-  text-align: center;
+
+body {
+  background-color: #151515 !important;
+  color: var(--greyOne) !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-root {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.app-root > div {
+  margin: 0 !important;
+}
+
+.app-root div.info-placeholder {
+  width: 400px;
+  height: 100%;
+}
+
+.app-root div.info-container {
+  width: 400px;
+  position: fixed;
+  top: 0;
+}
+
+.app-root div.details-container {
+  flex: 1;
+}
+
+.contacts-container {
+  display: flex;
+  padding: 1rem;
+  margin-top: 80px;
+}
+
+.contacts-container .contacts {
+  padding-left: 1rem;
+}
+
+.contacts-container .contacts > div {
+  margin-top: 73.5px;
+}
+
+.contacts-container .contacts > div > div {
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.contacts-container .contacts a {
+  color: var(--greyTwo);
+  font-weight: bolder;
+}
+
+.contacts-container .contacts i.icon {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.info-container {
+  min-width: 400px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.info-container h1 {
+  font-size: 4rem;
+}
+
+.info-container h1, .info-container h2 {
+  margin:  0 !important;
+}
+
+.info-container .name-container {
+  padding: 1rem;
+  text-align: center;
+}
+
+.info-container .name-container p {
+  margin-top: 0.5rem;
+  font-style: italic;
+
+}
+
+.info-container .flex-pic-cont {
+  display: flex;
+}
+
+.info-container .contacts-container img.profile_pic {
+  height: 120px; 
+  border-radius: 50%;
+}
+
+.info-container .sections-container div.list {
+  margin: 5rem auto 0 auto;
+  width: fit-content;
+  font-size: 1.5rem;
+}
+.info-container .sections-container div.list .item {
+  cursor: pointer;
+}
+
+.details-container .section-header {
+  /*font-size: 1.5rem;*/
+  font-weight: bold;
+  color:  var(--greyTwo);
+  border-bottom: 3px solid var(--greyTwo);
+  padding: 0 0 4px 10px;
+}
+
+.employment-container, .projects-container, .skills-container, .education-container {
+  /*display: inline flex;*/
+}
+
+.app-root .details-container .skills-container .card.ui .label {
+  border-radius: 7px;
+  margin: 2px;
+}
+
+.app-root .details-container .skills-container .card.ui {
+  min-width: 300px;
+}
+
+.app-root .details-container .skills-container .card.ui .content {
+  text-align: center;
+}
+
+.app-root .details-container .card.ui {
+  background-color: #202022 !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--greyOne) !important;
+  margin: 1rem;
+  padding: 1rem;
+  width: min-content;
+  min-width: 16rem;
+  display: inline-flex;
+}
+
+.app-root .details-container .ui.card:first-child {
+  margin-top: 1rem !important;
+}
+
+.app-root .card.ui .header {
+  font-size: 1.5rem !important;
+}
+
+.app-root .card.ui .meta {
+  color: var(--greyThree) !important;
+  font-style: italic;
+}
+
+/* THEME COLORS */
+:root {
+  --greyZero: #fcfcff; /* cards */
+  --greyOne: #f7f3f3; /* background */
+  --greyTwo: #c9c3c4;
+  --greyThree: #bab5b5;
+  --greyFour: #807d7d;
+  --greyFive: #4b4949;
+  --greySix: #1c1b1b;
+  --greySeven: #080405;
+
+  --primaryOne: #2e1013;
+  --primaryTwo: #571f25;
+  --primaryThree: #842e38;
+  --primaryFour: #b54853;
+  --primaryFive: #e6505d;
+
+  --accentOne: #f9f9f9;
+  --accentTwo: #f9f9f9;
+  --accentThree: #f9f9f9;
+  --accentFour: #f9f9f9;
+  --accentFive: #3ad0ef;
+
+  --goodOne: #e3fcec;
+  --goodTwo: #a8eec1;
+  --goodThree: #249d57;
+  --goodFour: #187741;
+  --goodFive: #155239;
 }
