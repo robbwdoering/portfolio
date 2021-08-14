@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: row;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto !important;
   overflow: hidden;
 }
 
@@ -19,6 +19,7 @@ body {
 .app-root div.info-placeholder {
   width: 400px;
   height: 100%;
+  min-height: 600px;
 }
 
 .app-root div.info-container {
@@ -118,28 +119,28 @@ body {
   margin: 2px;
 }
 
-.app-root .details-container .skills-container .card.ui {
-  min-width: 300px;
-}
-
 .app-root .details-container .skills-container .card.ui .content {
   text-align: center;
 }
 
 .app-root .details-container .card.ui {
   background-color: #202022 !important;
+  max-width: unset !important;
   border: none !important;
   box-shadow: none !important;
   color: var(--greyOne) !important;
-  margin: 1rem;
+  margin: 0.5rem 0 !important;
   padding: 1rem;
-  width: min-content;
-  min-width: 16rem;
   display: inline-flex;
+  min-width: fit-content;
 }
 
-.app-root .details-container .ui.card:first-child {
-  margin-top: 1rem !important;
+.app-root .details-container .card.ui .content {
+  padding: 0.5rem;
+}
+
+.app-root .details-container .card.ui.active {
+  z-index: 1001;
 }
 
 .app-root .card.ui .header {
