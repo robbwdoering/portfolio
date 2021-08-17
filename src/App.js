@@ -1,5 +1,5 @@
 import React, { useState, useRef, createRef, useMemo, useEffect } from 'react';
-import { Card, Grid, Icon, Ref, Label, List, Divider } from 'semantic-ui-react';
+import { Card, Table, Grid, Icon, Image, Ref, Label, List, Divider } from 'semantic-ui-react';
 
 import { order, projects, employment, skills, education, contactLines, skillLevels } from './constants';
 import { DetailsCard } from './DetailsCard'
@@ -80,11 +80,34 @@ export default props => {
 						content: skills
 							.filter(skill => skill.level === skillLevel.key)
 							.map((skill, idx) => (
-								<Label as="a" onClick={() => console.log("clicked skill!")}>
+								<Label as="a">
 									{skill.name}
 								</Label>
 							)),
-						fullText: null,
+						fullText: (
+							<Table className='skills-table'>
+								<Table.Body>
+								{skills
+									.filter(skill => skill.level === skillLevel.key)
+									.map((skill, idx) => (
+										<Table.Row>
+											{skill.image && (
+												<Table.Cell>
+													<Image src={skill.image} />
+												</Table.Cell>
+											)}
+											<Table.Cell>
+												{skill.name}
+											</Table.Cell>
+											<Table.Cell>
+												{skill.desc}
+											</Table.Cell>
+										</Table.Row>
+									))
+								}
+								</Table.Body>
+							</Table>
+						),
 						index: globalCardIdx++
 					}));
 				case 'education':

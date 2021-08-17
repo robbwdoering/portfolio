@@ -37,24 +37,27 @@ export const projects = [
 		link: 'https://github.com/robbwdoering/origamiodyssey',
 		sourceLink: 'https://origamiodyssey.herokuapp.com/',
 		blurb: 'Built a React webapp that delivers origami instructions using a novel method: 3D simulations.',
-		desc:
-			'A React SPA built to teach origami, the art of folding paper. \
-			It uses animated 3D simulations with temporal & spatial controls, hierarchical annotations of folds, and hobbyist augmentations to improve learner performance on audience specific self-assessments. \
-			Each specific method in that sentence is supported by research I did as part of GaTech’s CS6460: Educational Technology.',
+		bullets: [
+			'A React SPA built to teach origami, the art of folding paper.',
+			'It uses animated 3D simulations with temporal & spatial controls, hierarchical annotations of folds, and hobbyist augmentations to improve learner performance on audience specific self-assessments.',
+			'Each specific method in that sentence is supported by research I did as part of GaTech’s CS6460: Educational Technology.'
+		],
 		technologies: ['Javascript', 'React', 'Redux', 'Three.js', 'react-three-fiber', 'Material-UI']
 	},
 	{
 		name: 'Bellum.ai',
 		link: 'https://github.com/robbwdoering/bellum.ai',
-		desc:
-			'[IN PROGRESS] A React SPA built to provide tools for the notoriously complex tabletop wargame, Warhammer 40k. It uses 3D simulation of the board, complex statistical modeling and analysis, and customizable visualizations to ease and speed along the game. This required a regex parser to read complex “army lists” into json objects for manipulation using a rules-translation schema I designed.',
+		bullets: [
+			'[IN PROGRESS] A React SPA built to provide tools for the notoriously complex tabletop wargame, Warhammer 40k. It uses 3D simulation of the board, complex statistical modeling and analysis, and customizable visualizations to ease and speed along the game. This required a regex parser to read complex “army lists” into json objects for manipulation using a rules-translation schema I designed.'
+		],
 		blurb: 'Building a React webapp to teach and analyse a complex boardgame called Warhammer 40k.',
 		technologies: ['Javascript', 'React', 'Redux', 'Three.js', 'react-three-fiber', 'D3.js', 'Auth0', 'Semantic UI']
 	},
 	{
 		name: 'Data Visualization in VR',
-		desc:
-			'For my Vanderbilt senior project, I worked with a professor on his research quantifying the benefits of visualizing, selecting, and creating data in VR over 2D options.',
+		bullets: [
+			'For my Vanderbilt senior project, I worked with a professor on his research quantifying the benefits of visualizing, selecting, and creating data in VR over 2D options.'
+		],
 		blurb: 'Built research tools in Unity for quantifying the benefits of VR tech.',
 		technologies: ['C#', 'Unity', 'Oculus', 'Blender']
 	}
