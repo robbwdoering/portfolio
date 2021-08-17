@@ -1,34 +1,34 @@
 import React, { useState, useRef, createRef, useMemo, useEffect } from 'react';
-import { Card, Grid, Icon, Label, List, Divider } from 'semantic-ui-react';
-import { useSprings, animated } from 'react-spring';
+import { Card, Grid, Icon, Ref, Label, List, Divider } from 'semantic-ui-react';
 
-import { projects, employment, skills, education, contactLines, levelBlurbs } from './constants';
+import { order, projects, employment, skills, education, contactLines, skillLevels } from './constants';
+import { DetailsCard } from './DetailsCard'
 
 import profile_pic from './profile_pic.jpg';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 
-const AnimatedCard = animated(Card);
-
-// Some global work is done to count the number of constants passed in, i.e. number of cards to be displayed
-const numCards = projects.length + employment.length + education.length;
-// A temporary array is created for convenience of iteration
-let tmpCardsArr = [];
-for (let i = 0; i < numCards; i++) {
-	tmpCardsArr[i] = 0;
-}
-
 export default props => {
 	const [windowWidth, setWindowWidth] = useState(0);
 	const [activeCard, setActiveCard] = useState(-1);
+	const [isMounted, setIsMounted] = useState(false);
+	const cardContRef = useRef();
 
-	const handleClick = (type, cardIdx) => {
-		console.log(`clicked ${type} w/ name: ${cardIdx}`);
-		setActiveCard(cardIdx === activeCard ? -1 : cardIdx);
+	/**
+	 * Select / deselect cards when they're clicked on. 
+	 * @param cardIdx the global index of the the card that was clicked 
+	 */
+	const handleCardClick = cardIdx => {
+		console.log('handleCardClick', cardIdx, activeCard);
+		setActiveCard(activeCard => cardIdx === activeCard ? -1 : cardIdx);
 	};
 
+	/**
+	 * Scroll to one of the section headers.
+	 * @param event Object describing the onClick event
+	 * @param target Object describing the clicked button
+	 */
 	const scrollSection = (event, target) => {
-		// console.log('scroll', event, target, target.targetid);
 		if (target.targetid) {
 			document.getElementById(target.targetid).scrollIntoView({ behavior: 'smooth' });
 		}
@@ -38,37 +38,90 @@ export default props => {
 		setWindowWidth(window.innerWidth);
 	};
 
+	/**
+	 * Generate the actual renderable cards, separated into rows by category.
+	 * This is broken out into a function for ease of memoization, and to more readably
+	 * maintain the globalCardIdx as the arrays are generated.
+	 * @return a 2D array of React components, empty element possible
+	 */
+	const generateCards = () => {
+		let globalCardIdx = 0;
+
+		// Go through the order defined in the constants file.
+		// To add a new category to this site, you'd need to add a switch case below,
+		// and then add the corresponding elements to the constants file
+		return order.map(category => {
+			const commonProps = {
+				cardContRef,
+				handleCardClick
+			};
+
+			switch(category) {
+				case 'employment':
+					return employment.map(role => Object.assign({}, commonProps, {
+						header: role.title,
+						meta: <div> {role.name} <br /> {role.dates} </div>,
+						content: role.blurb,
+						fullText: role.bullets,
+						index: globalCardIdx++
+					}));
+				case 'projects':
+					return projects.map(project => Object.assign({}, commonProps, {
+						header: project.name,
+						meta: project.technologies.reduce((acc, str, i) => acc + (i ? ', ' : '') + str, ''),
+						content: project.blurb,
+						fullText: project.bullets,
+						index: globalCardIdx++
+					}));
+				case 'skills':
+					return skillLevels.map(skillLevel => Object.assign({}, commonProps, {
+						header: skillLevel.key,
+						meta: skillLevel.blurb,
+						content: skills
+							.filter(skill => skill.level === skillLevel.key)
+							.map((skill, idx) => (
+								<Label as="a" onClick={() => console.log("clicked skill!")}>
+									{skill.name}
+								</Label>
+							)),
+						fullText: null,
+						index: globalCardIdx++
+					}));
+				case 'education':
+					return education.map(school => Object.assign({}, commonProps, {
+						header: school.name,
+						meta: school.date,
+						content: school.blurb,
+						index: globalCardIdx++
+					}));
+				default:
+					console.error(`Didn't recognize category: '${category}'`)
+					return [];
+			}
+		});
+	};
+
+	// onMount()/onUnmount() effects 
 	useEffect(() => {
+		// Record that this component has mounted, and refs should be accessible
+		setIsMounted(true);
+
+		// Rerender this component when the window is resized. Overkill but makes things simpler in short term
 		handleResize();
 		window.addEventListener('resize', handleResize);
+
+		// Clean up the event listener on unmount
 		return () => window.removeEventListener('resize');
 	}, []);
 
-	// Pass in the aforementioned inputs, and get back the styling props
-	const springs = useSprings(
-		numCards,
-		tmpCardsArr.map((e, i) => {
-			const isActive = activeCard === i;
-			console.log('Creating Springs', i);
-
-			// Get the initial styles, based on status of this card 
-			let ret = {
-				config: { friction: 15 },
-				// height: isActive ? 500 : 'min-content',
-				// width: isActive ? 'inherit' : 'auto'
-				height: isActive ? 500 : 150,
-				width: isActive ? 500 : 300 
-			};
-
-			return ret;
-		})
-	);
-
-	let globalCardIdx = 0;
+	// Build the 2D array of card components only once, since it is based solely on constants
+	// (ATM, at least)
+	const cards = useMemo(generateCards, []);
 
 	return (
 		<Grid className="app-root">
-			<Grid.Row>
+			{/* Basic layout is two stackable columns that center on mobile resolutions*/}
+			<Grid.Row stackable>
 				<Grid.Column className="info-container">
 					<div width={8} mobile={16} className="contacts-container">
 						<img className="profile_pic" src={profile_pic} alt="Picture of me!" />
@@ -85,7 +138,7 @@ export default props => {
 					</div>
 					<div className="name-container">
 						<div>
-							<h1> Robb Doering </h1>
+							<h1 className='my_name'> Robb Doering </h1>
 							<h2> is looking for work. </h2>
 							<p>
 								Full stack web developer | Space-ground C2 systems | Three.js based 3D simulations |
@@ -93,129 +146,37 @@ export default props => {
 							</p>
 						</div>
 					</div>
+					{/* A simple website outline, displaying index and all-caps category name in each line */}
 					<div className="sections-container">
 						<List animated verticalAlign="middle">
-							<List.Item targetid={'employment'} onClick={scrollSection}>
-								<span>01 Employment</span>
-							</List.Item>
-							<List.Item targetid={'projects'} onClick={scrollSection}>
-								<span>02 Projects</span>
-							</List.Item>
-							<List.Item targetid={'skills'} onClick={scrollSection}>
-								<span>03 Skills</span>
-							</List.Item>
-							<List.Item targetid={'education'} onClick={scrollSection}>
-								<span>04 Education</span>
-							</List.Item>
+							{order.map((category, i) => (
+								<List.Item targetid={category} onClick={scrollSection}>
+									<span>{`${i}`.padStart(2, '0')} {category.toUpperCase()}</span>
+								</List.Item>
+							))}
 						</List>
 					</div>
 				</Grid.Column>
-				<Grid.Column width={8} mobile={16} className="details-container">
-					<div className="section-header" id="employment">
-						EMPLOYMENT
-					</div>
-					<Grid stackable className="employment-container">
-						<Grid.Row columns={1}>
-							{employment.map((role, idx) => (
-								<Grid.Column>
-									{/* The actual card, absolutely positioned */}
-									<AnimatedCard
-										raised={activeCard === globalCardIdx}
-										className={activeCard === globalCardIdx ? 'active' : null}
-										style={springs[globalCardIdx]}
-										glbIdx={globalCardIdx++}
-										onClick={(e, { glbIdx }) => handleClick('employment', glbIdx)}
-									>
-										<Card.Header>{role.title}</Card.Header>
-										<Card.Meta>
-											{role.name}
-											<br />
-											{role.dates}
-										</Card.Meta>
-										<Card.Content>{role.blurb}</Card.Content>
-									</AnimatedCard>
-								</Grid.Column>
-							))}
-						</Grid.Row>
-					</Grid>
 
-					<div className="section-header" id="projects">
-						PROJECTS
-					</div>
-					<Grid stackable className="projects-container">
-						<Grid.Row columns={1}>
-							{projects.map((project, idx) => (
-								<Grid.Column>
-									<AnimatedCard
-										style={springs[globalCardIdx]}
-										glbIdx={globalCardIdx++}
-										onClick={(e, { glbIdx }) => handleClick('projects', glbIdx)}
-									>
-										<Card.Header>{project.name}</Card.Header>
-										<Card.Meta>
-											{project.technologies.reduce(
-												(acc, str, i) => acc + (i ? ', ' : '') + str,
-												''
-											)}
-										</Card.Meta>
-										<Card.Content>{project.blurb}</Card.Content>
-									</AnimatedCard>
-								</Grid.Column>
-							))}
-						</Grid.Row>
-					</Grid>
-
-					<div className="section-header" id="skills">
-						SKILLS
-					</div>
-					<Grid stackable className="skills-container">
-						<Grid.Row columns={1}>
-							{skills
-								.reduce(
-									(acc, skill) => (acc.includes(skill.level) ? acc : acc.concat([skill.level])),
-									[]
-								)
-								.map((skillLevel, i) => (
-									<Grid.Column>
-										<Card>
-											<Card.Header>{skillLevel}</Card.Header>
-											<Card.Meta>{levelBlurbs[skillLevel] || ''}</Card.Meta>
-											<Card.Content>
-												{skills
-													.filter(skill => skill.level === skillLevel)
-													.map((skill, idx) => (
-														<Label as="a" onClick={() => handleClick('skill', skill)}>
-															{skill.name}
-														</Label>
-													))}
-											</Card.Content>
-										</Card>
-									</Grid.Column>
-								))}
-						</Grid.Row>
-					</Grid>
-
-					<div className="section-header" id="education">
-						EDUCATION
-					</div>
-					<Grid stackable className="education-container">
-						<Grid.Row columns={1}>
-							{education.map((school, idx) => (
-								<Grid.Column>
-									<AnimatedCard
-										style={springs[globalCardIdx]}
-										glbIdx={globalCardIdx++}
-										onClick={(e, { glbIdx }) => handleClick('education', glbIdx)}
-									>
-										<Card.Header>{school.name}</Card.Header>
-										<Card.Meta>{school.date}</Card.Meta>
-										<Card.Content>{school.blurb}</Card.Content>
-									</AnimatedCard>
-								</Grid.Column>
-							))}
-						</Grid.Row>
-					</Grid>
-				</Grid.Column>
+				{/* The body of the site, the detail cards */}
+				{/* Wrapper lets us to pass a ref, so the children can track the attributes of their container asynchronously */}
+				<Ref innerRef={cardContRef} >
+					<Grid.Column width={8} mobile={16} className="details-container">
+						{order.map((category, idx) => (
+							<React.Fragment>
+								<div className="section-header" id={category}> {category.toUpperCase()} </div>
+								<div className={`${category}-container`}>
+									{cards[idx].map(cardObj => (
+										<DetailsCard
+											isActive={activeCard === cardObj.index}
+											{...cardObj}
+										/>
+									))}
+								</div>
+							</React.Fragment>
+						))}
+					</Grid.Column>
+				</Ref>
 			</Grid.Row>
 		</Grid>
 	);

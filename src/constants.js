@@ -1,11 +1,18 @@
+export const order = [
+	'employment',
+	'projects',
+	'skills',
+	'education'
+];
+
 export const employment = [
 	{
 		title: 'Software Engineer II',
 		name: 'Space Ground Systems Solutions',
 		dates: 'June 2019 - July 2021',
-		blurb: 'Developed full stack web applications, got project lead experience.',
+		blurb: 'Developed full stack web applications, chosen to serve as temp project lead for 3 months.',
 		bullets: [
-			'Worked on a web application for space-ground command & control systems, using React w/ Redux, Java, and C++ to display & interact with high latency,  error sensitive ground site information',
+			'Worked on a web application for space-ground command & control systems, using React w/ Redux, Java, and C++ to display & interact with high latency, error sensitive ground site information',
 			'Chosen to fill in as project lead during a 3-month planned leave of absence for a team of 6 other full time engineers. Responsible for leading Agile ceremonies, clearing blockers, meeting with stakeholders, UX and system design for new features, designing and delivering training, and more.',
 			'Implemented ~12 significant full stack features, using description documents from software architects for some, and leading the requirements gathering and UX design processes myself for others.',
 			'Owned implementation of systems used by many government satellite programs, contributing to an essential piece of the Naval Research Laboratory’s response to specific DoD-wide standardization and modernization mandates for space related software.',
@@ -18,8 +25,8 @@ export const employment = [
 		dates: 'May 2018 - August 2018',
 		blurb: 'Planned and implemented basic full stack web tool for data collection.',
 		bullets: [
-			'Worked on an internal web tool for ~50 project managers to complete a new procedure and collect a large volume of data for executive analysis using Java, Spring MVC, and Javascript.',
-			'Was responsible for carrying out the full software engineering process, from talking to stakeholders in order to craft the SRS document through implementation and feedback.'
+			'Worked on an internal web tool for ~50 project managers to complete a new procedure and collect procedural data for executive analysis using Java, Spring MVC, and Javascript.',
+			'Was responsible for carrying out the full software engineering process, from talking to stakeholders, to writing the SRS document, to implementation and feedback.'
 		]
 	}
 ];
@@ -364,7 +371,13 @@ export const contactLines = [
 	}
 ];
 
-export const levelBlurbs = {
-	Functional: 'I have worked with these...',
-	Advanced: 'I have worked extensively with these...'
-};
+export const skillLevels = [
+	{
+		key: 'Advanced',
+		blurb: 'I have worked extensively with these...'
+	},
+	{
+		key: 'Functional',
+		blurb: 'I have worked with these...'
+	}
+];

@@ -65,8 +65,9 @@ body {
   min-width: 400px;
 }
 
-.info-container h1 {
-  font-size: 4rem;
+.info-container h1.my_name {
+  width: 100%;
+  font-size: 3.5em;
 }
 
 .info-container h1, .info-container h2 {
@@ -133,6 +134,8 @@ body {
   padding: 1rem;
   display: inline-flex;
   min-width: fit-content;
+
+  height:  min-content;
 }
 
 .app-root .details-container .card.ui .content {
