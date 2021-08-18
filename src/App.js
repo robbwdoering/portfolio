@@ -146,38 +146,40 @@ export default props => {
 			{/* Basic layout is two stackable columns that center on mobile resolutions*/}
 			<Grid.Row stackable>
 				<Grid.Column className="info-container">
-					<div width={8} mobile={16} className="contacts-container">
-						<img className="profile_pic" src={profile_pic} alt="Picture of me!" />
-						<div className="contacts">
-							<div>
-								{contactLines.map(cur => (
-									<div>
-										{' '}
-										<Icon name={cur.icon} size="large" /> <a href={cur.href}>{cur.name}</a>{' '}
-									</div>
-								))}
+					<div className="sticky-container" >
+						<div width={8} mobile={16} className="contacts-container">
+							<img className="profile_pic" src={profile_pic} alt="Picture of me!" />
+							<div className="contacts">
+								<div>
+									{contactLines.map(cur => (
+										<div>
+											{' '}
+											<Icon name={cur.icon} size="large" /> <a href={cur.href}>{cur.name}</a>{' '}
+										</div>
+									))}
+								</div>
 							</div>
 						</div>
-					</div>
-					<div className="name-container">
-						<div>
-							<h1 className='my_name'> Robb Doering </h1>
-							<h2> is looking for work. </h2>
-							<p>
-								Full stack web developer | Space-ground C2 systems | Three.js based 3D simulations |
-								React, Redux, Javascript, Java, C, C++, Python
-							</p>
+						<div className="name-container">
+							<div>
+								<h1 className='my_name'> Robb Doering </h1>
+								<h2> is looking for work. </h2>
+								<p>
+									Full stack web developer | Space-ground C2 systems | Three.js based 3D simulations |
+									React, Redux, Javascript, Java, C, C++, Python
+								</p>
+							</div>
 						</div>
-					</div>
-					{/* A simple website outline, displaying index and all-caps category name in each line */}
-					<div className="sections-container">
-						<List animated verticalAlign="middle">
-							{order.map((category, i) => (
-								<List.Item targetid={category} onClick={scrollSection}>
-									<span>{`${i}`.padStart(2, '0')} {category.toUpperCase()}</span>
-								</List.Item>
-							))}
-						</List>
+						{/* A simple website outline, displaying index and all-caps category name in each line */}
+						<div className="sections-container">
+							<List animated verticalAlign="middle">
+								{order.map((category, i) => (
+									<List.Item targetid={category} onClick={scrollSection}>
+										<span>{`${i}`.padStart(2, '0')} {category.toUpperCase()}</span>
+									</List.Item>
+								))}
+							</List>
+						</div>
 					</div>
 				</Grid.Column>
 

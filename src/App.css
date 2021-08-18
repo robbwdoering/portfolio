@@ -28,6 +28,11 @@ body {
   top: 0;
 }
 
+.app-root div.info-container .sticky-container {
+  position: fixed !important;
+  width: 400px;
+}
+
 .app-root div.details-container {
   flex: 1;
 }
@@ -141,15 +146,23 @@ body {
 
 .app-root .details-container .card.ui .content {
   padding: 0.5rem;
+  display: flex;
+  width:  200%;
 }
 
 .app-root .details-container .card.ui.active {
   z-index: 1001;
 }
 
+.app-root .details-container .card.ui .blurb-content {
+  float:  right; 
+  height: min-content;
+}
+
 .app-root .details-container .card.ui .blurb-content,
 .app-root .details-container .card.ui .full-text-content {
-  display: absolute;
+  flex: 1;
+  /*display: absolute;*/
 }
 
 .app-root .details-container .card.ui.active .blurb-content {

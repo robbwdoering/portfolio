@@ -42,13 +42,13 @@ export const DetailsCard = props => {
 	const contentSpring = useSpring({
 		// from: { },
 		to: {
-			translate: isActive ? '105%' : '0%' 
+			translate: isActive ? '50%' : '0%' 
 		}
 	});
 	const fullTextSpring = useSpring({
-		from: { translate: '-105%'},
+		from: { translate: '-50%'},
 		to: {
-			translate: isActive ? '0%' : '-105%' 
+			translate: isActive ? '0%' : '-50%' 
 		}
 	});
 
