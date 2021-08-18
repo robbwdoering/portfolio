@@ -1,5 +1,6 @@
 import React, { useState, useRef, createRef, useMemo, useEffect } from 'react';
 import { Card, Table, Grid, Icon, Image, Ref, Label, List, Divider } from 'semantic-ui-react';
+import { useSpring, useSpringRef, useTransition, useChain, config, animated } from 'react-spring';
 
 import { order, projects, employment, skills, education, contactLines, skillLevels } from './constants';
 import { DetailsCard } from './DetailsCard'
@@ -124,6 +125,15 @@ export default props => {
 		});
 	};
 
+	// On-open chain
+	// Build a spring and catch its ref
+	// const cardsTransRef = useSpringRef()
+	// const props = useSpring({ ...values, ref: springRef })
+	// // Build a transition and catch its ref
+	// const transitionRef = useSpringRef()
+	// const transitions = useTransition({ ...values, ref: transitionRef })
+	// // First run the spring, when it concludes run the transition
+
 	// onMount()/onUnmount() effects 
 	useEffect(() => {
 		// Record that this component has mounted, and refs should be accessible
@@ -141,6 +151,21 @@ export default props => {
 	// (ATM, at least)
 	const cards = useMemo(generateCards, []);
 
+
+	const headersTransRef = useSpringRef()
+	const headers = useMemo(() => order.map((category, idx) => ({ category, idx })), []);
+	const headersTrans = useTransition(headers, {
+			config: { friction: 15 },
+		    from: { opacity: 0, y: -100, x: '100%' },
+		    enter: item => [
+			    { x: '0%' },
+			    { y: 0, opacity: 1 }
+		    ],
+		    // leave: { opacity: 0 },
+		    delay: 50,
+		    // config: config.molasses
+	});
+
 	return (
 		<Grid className="app-root">
 			{/* Basic layout is two stackable columns that center on mobile resolutions*/}
@@ -154,7 +179,7 @@ export default props => {
 									{contactLines.map(cur => (
 										<div>
 											{' '}
-											<Icon name={cur.icon} size="large" /> <a href={cur.href}>{cur.name}</a>{' '}
+											<Icon name={cur.icon} size="large" /><a href={cur.href}>{cur.name}</a>{' '}
 										</div>
 									))}
 								</div>
@@ -187,13 +212,20 @@ export default props => {
 				{/* Wrapper lets us to pass a ref, so the children can track the attributes of their container asynchronously */}
 				<Ref innerRef={cardContRef} >
 					<Grid.Column width={8} mobile={16} className="details-container">
-						{order.map((category, idx) => (
+						{headersTrans((style, item, t, idx) => (
 							<React.Fragment>
-								<div className="section-header" id={category}> {category.toUpperCase()} </div>
-								<div className={`${category}-container`}>
-									{cards[idx].map(cardObj => (
+								<animated.div
+									className="section-header"
+									style={{ x: style.x}}
+									id={order[idx]}
+								>
+									{item.category.toUpperCase()}
+								</animated.div>
+								<div className={`${order[idx]}-container`}>
+									{cards[idx] && cards[idx].map(cardObj => (
 										<DetailsCard
 											isActive={activeCard === cardObj.index}
+											style={{ y: style.y, opacity: style.opacity }}
 											{...cardObj}
 										/>
 									))}

@@ -8,7 +8,7 @@ export const order = [
 export const employment = [
 	{
 		title: 'Software Engineer II',
-		name: 'Space Ground Systems Solutions',
+		name: 'Space Ground System Solutions',
 		dates: 'June 2019 - July 2021',
 		blurb: 'Developed full stack web applications, chosen to serve as temp project lead for 3 months.',
 		bullets: [
@@ -50,7 +50,7 @@ export const projects = [
 		bullets: [
 			'[IN PROGRESS] A React SPA built to provide tools for the notoriously complex tabletop wargame, Warhammer 40k. It uses 3D simulation of the board, complex statistical modeling and analysis, and customizable visualizations to ease and speed along the game. This required a regex parser to read complex “army lists” into json objects for manipulation using a rules-translation schema I designed.'
 		],
-		blurb: 'Building a React webapp to teach and analyse a complex boardgame called Warhammer 40k.',
+		blurb: 'Building a React webapp to teach and analyze a complex boardgame called Warhammer 40k.',
 		technologies: ['Javascript', 'React', 'Redux', 'Three.js', 'react-three-fiber', 'D3.js', 'Auth0', 'Semantic UI']
 	},
 	{
@@ -69,7 +69,8 @@ export const skills = [
 		desc:
 			"I first learned linux in undergrad, use it every day professionally, and do all my personal projects in Ubuntu VM's. I have successfully debugged many environment issues in these contexts, and I am comfortable with reasonably advanced CLI patterns, such as backtics, pipes, and bespoke script creation.",
 		level: 'Advanced',
-		category: 'languages'
+		category: 'languages',
+
 	},
 	{
 		name: 'agile',

@@ -11,7 +11,7 @@ const AnimatedContent = animated(Card.Content);
 
 export const DetailsCard = props => {
 	// Extract props
-	const { index, cardContRef, handleCardClick, isActive, header, meta, content, fullText, image } = props;
+	const { index, style, cardContRef, handleCardClick, isActive, header, meta, content, fullText, image } = props;
 	const refExists = cardContRef && cardContRef.current;
 
 	const headerRef = useRef();
@@ -20,7 +20,7 @@ export const DetailsCard = props => {
 
 	// Create the spring that controls the positioning of the card itself 
 	const spring = useSpring({
-		// config: { friction: 15 },
+		config: { friction: 15 },
 		// height: isActive ? 500 : 150,
 		to: {
 			height: !headerRef.current ? 150 : (headerRef.current.clientHeight + (isActive ? fulltextRef.current.clientHeight : contentRef.current.clientHeight) + 28),
@@ -39,12 +39,6 @@ export const DetailsCard = props => {
 	});
 
 	// Create springs for the body text
-	const contentSpring = useSpring({
-		// from: { },
-		to: {
-			translate: isActive ? '50%' : '0%' 
-		}
-	});
 	const fullTextSpring = useSpring({
 		from: { translate: '-50%'},
 		to: {
@@ -58,10 +52,10 @@ export const DetailsCard = props => {
 		<AnimatedCard
 			raised={isActive}
 			className={isActive ? 'active' : null}
-			style={spring}
+			style={Object.assign({}, spring, style || {})}
 			onClick={() => handleCardClick(index)}
 		>
-			<div ref={headerRef}>
+			<div className='header-container' ref={headerRef}>
 				<AnimatedHeader style={headerSpring}>
 					{image ? (<Image width={200} height={200} src={image} />) : null}
 					{header}

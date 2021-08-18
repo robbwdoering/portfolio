@@ -45,6 +45,7 @@ body {
 
 .contacts-container .contacts {
   padding-left: 1rem;
+  font-family: monospace;
 }
 
 .contacts-container .contacts > div {
@@ -64,6 +65,7 @@ body {
 
 .contacts-container .contacts i.icon {
   color: white;
+  margin-right: 0;
 }
 
 .info-container {
@@ -100,9 +102,10 @@ body {
 }
 
 .info-container .sections-container div.list {
+  font-family: monospace;
   margin: 5rem auto 0 auto;
   width: fit-content;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 .info-container .sections-container div.list .item {
   cursor: pointer;
@@ -110,14 +113,16 @@ body {
 
 .details-container .section-header {
   /*font-size: 1.5rem;*/
+  font-family: monospace;
   font-weight: bold;
   color:  var(--greyTwo);
-  border-bottom: 3px solid var(--greyTwo);
+  border-bottom: 2px solid var(--greyTwo);
   padding: 0 0 4px 10px;
 }
 
 .employment-container, .projects-container, .skills-container, .education-container {
   /*display: inline flex;*/
+  overflow: hidden;
 }
 
 .app-root .details-container .skills-container .card.ui .label {
@@ -136,12 +141,17 @@ body {
   box-shadow: none !important;
   color: var(--greyOne) !important;
   margin: 0.5rem 0 !important;
-  padding: 1rem;
+  /*padding: 1rem;*/
+  padding:  0;
   display: inline-flex;
   min-width: fit-content;
   overflow: hidden;
 
   /*height:  min-content;*/
+}
+
+.app-root .details-container .card.ui .header-container {
+  padding: 1rem 0 0 1rem;
 }
 
 .app-root .details-container .card.ui .content {
@@ -161,16 +171,17 @@ body {
 
 .app-root .details-container .card.ui .blurb-content,
 .app-root .details-container .card.ui .full-text-content {
+  padding: 0 1rem;
   flex: 1;
   /*display: absolute;*/
 }
 
 .app-root .details-container .card.ui.active .blurb-content {
-  visibility: hidden;
+  /*visibility: hidden;*/
 }
 
 .app-root .details-container .card.ui:not(.active) .full-text-content {
-  visibility: hidden;
+  /*visibility: hidden;*/
 }
 
 .app-root .card.ui .header {
