@@ -109,6 +109,16 @@ export const projects = [
 		],
 		blurb: 'Built research tools in Unity for quantifying the benefits of VR tech.',
 		technologies: ['C#', 'Unity', 'Oculus', 'Blender']
+	},
+	{
+		name: 'This site!',
+		bullets: [
+			'Simple portfolio site built with a separation between styling and content, so it could easily be adapted or built upon by others.',
+			'Animations and transitions done using [react-spring](https://react-spring.io/basics), a fantastic library for natural + interruptible animations.',
+			'Developed a basic CI/CD pipeline for ease of updates, which revolves around the use of Github Actions to deploy to an AWS bucket whenever changes are pushed to a production branch. '
+		],
+		blurb: 'Simple porfolio site built for extensibility and modularity, deployed automatically via Github actions.',
+		technologies: ['Javascript', 'React', 'react-spring', 'Semantic UI']
 	}
 ];
 

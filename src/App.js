@@ -13,6 +13,7 @@ export default props => {
 	const [windowWidth, setWindowWidth] = useState(0);
 	const [activeCard, setActiveCard] = useState(-1);
 	const [isMounted, setIsMounted] = useState(false);
+	const [headers, setHeaders] = useState([]);
 	const cardContRef = useRef();
 
 	/**
@@ -119,8 +120,24 @@ export default props => {
 	// const transitions = useTransition({ ...values, ref: transitionRef })
 	// // First run the spring, when it concludes run the transition
 
+	/**
+	* Load a new header every small increment until they're all loaded.
+	*/
+	const recursiveAddHeader = () => {
+		setHeaders(oldArr => {
+			console.log('recursiveAddHeader', oldArr);
+			if (order.length > oldArr.length + 1) {
+				setTimeout(recursiveAddHeader, 300);
+			}
+
+			return oldArr.concat([{ category: order[oldArr.length], idx: oldArr.length }]);
+		});
+	}
+
 	// onMount()/onUnmount() effects
 	useEffect(() => {
+		recursiveAddHeader();
+
 		// Record that this component has mounted, and refs should be accessible
 		setIsMounted(true);
 
@@ -137,7 +154,7 @@ export default props => {
 	const cards = useMemo(generateCards, []);
 
 	const headersTransRef = useSpringRef();
-	const headers = useMemo(() => order.map((category, idx) => ({ category, idx })), []);
+	// const headers = useMemo(() => order.map((category, idx) => ({ category, idx })), []);
 	const headersTrans = useTransition(headers, {
 		config: { friction: 15 },
 		from: { opacity: 0, y: -100, x: '100%' },
