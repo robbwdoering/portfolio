@@ -159,7 +159,7 @@ export const skills = [
 	{
 		name: 'Jest',
 		desc:
-			'I was partially responsible for the initial implementation of Jest tests for a large existing codebase, and am used to maintaining coverage threshold targets over the long term. I am a big believer in the utility of Jest for unit and regression testing, and although I have no professional experience with Test Driven Development, I would relish the opportunity to try it.',
+			'I was partially responsible for bringing Jest tests to an existing codebase, and am used to maintaining coverage threshold targets over the long term. I am a big believer in the utility of Jest for unit and regression testing, and although I have no professional experience with Test Driven Development, I would relish the opportunity to try it.',
 		level: 'Advanced',
 		category: 'libraries'
 	},
@@ -173,21 +173,21 @@ export const skills = [
 	{
 		name: 'C',
 		desc:
-			'I have used C professionally as part of full stack web applications, and academically for lessons on IPC protocols, performant computing, and Operation System design. I also have experience writing, reading, and maintaining complex Makefiles.',
+			'I have used C professionally as part of full stack web applications, and academically for lessons on IPC protocols, performant computing, and Operating System design. This includes experience writing, reading, and maintaining Makefiles.',
 		level: 'Advanced',
 		category: 'languages'
 	},
 	{
 		name: 'C++',
 		desc:
-			'I have used C++ professionally as part of full stack web applications, and academically for lessons on data structures, standard library usage, and software design patterns. I also have experience writing, reading, and maintaining complex Makefiles.',
+			'I have used C++ professionally as part of full stack web applications, and academically for lessons on data structures, standard library usage, and software design patterns. This includes experience writing, reading, and maintaining Makefiles.',
 		level: 'Advanced',
 		category: 'languages'
 	},
 	{
 		name: 'CSS',
 		desc:
-			'I have used CSS extensively professionally and for personal projects, and feel comfortable with a variety of selectors and rules. I have tried vanilla CSS and CSS-as-code (read: CSS defined in JS), but prefer the former. I have not used any CSS frameworks, but would relish the opportunity.',
+			'I have used CSS professionally and for personal projects, and feel comfortable with a variety of selectors and rules. I have tried vanilla CSS and CSS-as-code (read: CSS defined in JS), but prefer the former.',
 		level: 'Advanced',
 		category: 'languages'
 	},
@@ -208,7 +208,7 @@ export const skills = [
 	{
 		name: 'Three.js',
 		desc:
-			'I have built a couple personal projects with this library, and enjoy messing around with it to learn what I can.',
+			'I have spent quite a bit of time experimenting with this library, the results of which can be seen in Bellum.ai\'s simulated gameboard, or Origami Odyssey\'s simulated paper.',
 		level: 'Advanced',
 		category: 'libraries'
 	},
@@ -380,7 +380,7 @@ export const skills = [
 	},
 	{
 		name: 'MATLAB',
-		desc: 'I was taught Lisp in my programming language course during undergraduate.',
+		desc: 'I was taught MATLAB in my mathematical programming courses during my undergraduate.',
 		level: 'Functional',
 		category: 'languages'
 	}
