@@ -1,4 +1,3 @@
-
 body {
   background-color: #151515 !important;
   color: var(--greyOne) !important;
@@ -16,40 +15,36 @@ body {
   margin: 0 !important;
 }
 
-.app-root div.info-placeholder {
-  width: 400px;
-  height: 100%;
-  min-height: 600px;
-}
-
 .app-root div.info-container {
   width: 400px;
-  position: fixed;
+  height:  520px;
   top: 0;
-}
-
-.app-root div.info-container .sticky-container {
-  position: fixed !important;
-  width: 400px;
+  padding: 0 !important;
 }
 
 .app-root div.details-container {
   flex: 1;
+  min-width: 320px;
 }
 
 .contacts-container {
   display: flex;
   padding: 1rem;
-  margin-top: 80px;
+  /*margin-top: 20px;*/
 }
 
 .contacts-container .contacts {
   padding-left: 1rem;
   font-family: monospace;
+  max-width: 18rem;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .contacts-container .contacts > div {
-  margin-top: 73.5px;
+  /*margin-top: 73.5px;*/
 }
 
 .contacts-container .contacts > div > div {
@@ -64,12 +59,7 @@ body {
 }
 
 .contacts-container .contacts i.icon {
-  color: white;
   margin-right: 0;
-}
-
-.info-container {
-  min-width: 400px;
 }
 
 .info-container h1.my_name {
@@ -77,8 +67,9 @@ body {
   font-size: 3.5em;
 }
 
-.info-container h1, .info-container h2 {
-  margin:  0 !important;
+.info-container h1,
+.info-container h2 {
+  margin: 0 !important;
 }
 
 .info-container .name-container {
@@ -89,7 +80,6 @@ body {
 .info-container .name-container p {
   margin-top: 0.5rem;
   font-style: italic;
-
 }
 
 .info-container .flex-pic-cont {
@@ -97,7 +87,7 @@ body {
 }
 
 .info-container .contacts-container img.profile_pic {
-  height: 120px; 
+  height: 120px;
   border-radius: 50%;
 }
 
@@ -115,12 +105,15 @@ body {
   /*font-size: 1.5rem;*/
   font-family: monospace;
   font-weight: bold;
-  color:  var(--greyTwo);
-  border-bottom: 2px solid var(--greyTwo);
-  padding: 0 0 4px 10px;
+  color: var(--accentThree);
+  border-bottom: 2px solid var(--accentThree);
+  padding: 0;
 }
 
-.employment-container, .projects-container, .skills-container, .education-container {
+.employment-container,
+.projects-container,
+.skills-container,
+.education-container {
   /*display: inline flex;*/
   overflow: hidden;
 }
@@ -142,10 +135,11 @@ body {
   color: var(--greyOne) !important;
   margin: 0.5rem 0 !important;
   /*padding: 1rem;*/
-  padding:  0;
+  padding: 0;
   display: inline-flex;
-  min-width: fit-content;
+  min-width:  min-content;
   overflow: hidden;
+  width:  unset;
 
   /*height:  min-content;*/
 }
@@ -154,10 +148,18 @@ body {
   padding: 1rem 0 0 1rem;
 }
 
+.app-root .details-container .card.ui .header-container img {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
 .app-root .details-container .card.ui .content {
   padding: 0.5rem;
   display: flex;
-  width:  200%;
+  width: 200%;
+  border:  none !important;
+  background:  transparent !important;
 }
 
 .app-root .details-container .card.ui.active {
@@ -165,7 +167,7 @@ body {
 }
 
 .app-root .details-container .card.ui .blurb-content {
-  float:  right; 
+  float: right;
   height: min-content;
 }
 
@@ -176,12 +178,13 @@ body {
   /*display: absolute;*/
 }
 
-.app-root .details-container .card.ui.active .blurb-content {
-  /*visibility: hidden;*/
+.app-root .details-container .card.ui.table-card .full-text-content {
+  overflow-y: scroll;
 }
 
-.app-root .details-container .card.ui:not(.active) .full-text-content {
-  /*visibility: hidden;*/
+.app-root .details-container .card.ui .full-text-content {
+  max-height: 400px !important;
+  background-color:  #202022 !important;
 }
 
 .app-root .card.ui .header {
@@ -191,6 +194,69 @@ body {
 .app-root .card.ui .meta {
   color: var(--greyThree) !important;
   font-style: italic;
+}
+
+.app-root .card.ui .link-container {
+  height: 28px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 14px;
+}
+
+.app-root .button.ui.compact {
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  color: var(--greyOne);
+  font-family: monospace;
+}
+
+.app-root .card.ui .link-container .button.ui.compact {
+  background: inherit;
+}
+
+
+.app-root .button.ui.compact i.icon {
+  color: var(--accentFive);
+}
+
+.app-root .info-container .info-placeholder {
+  /*display: none;*/
+  width: 400px;
+  height: 800px;
+}
+
+.app-root .info-container .sticky-container {
+  position: fixed;
+  width: 400px;
+  top: 80px;
+}
+
+.app-root .details-container .card.ui .content table.skills-table {
+  background: transparent;
+  color: var(--greyOne);
+}
+
+.app-root .details-container .card.ui .content table.skills-table tr.selected-row {
+  font-weight: bold;
+  background-color: var(--greyFive);
+}
+
+/* MOBILE STYLING */
+.app-root.mobile-mode {
+  flex-direction: column;
+}
+.app-root.mobile-mode .info-container  {
+  width:  100%;
+}
+.app-root.mobile-mode .info-container .info-placeholder {
+  display: none;
+  width: 100%;
+}
+
+.app-root.mobile-mode .info-container .sticky-container {
+  position: static;
+  width: 100%;
+  top:  unset;
 }
 
 /* THEME COLORS */
@@ -210,10 +276,10 @@ body {
   --primaryFour: #b54853;
   --primaryFive: #e6505d;
 
-  --accentOne: #f9f9f9;
-  --accentTwo: #f9f9f9;
-  --accentThree: #f9f9f9;
-  --accentFour: #f9f9f9;
+  --accentOne: #0a6375;
+  --accentTwo: #0d849c;
+  --accentThree: #10a6c3;
+  --accentFour: #13c7eb;
   --accentFive: #3ad0ef;
 
   --goodOne: #e3fcec;

@@ -1,3 +1,9 @@
+import resumePDF from './files/resume.pdf';
+import resumeDOCX from './files/resume.docx';
+
+import vanderbiltLogo from './files/vanderbilt.png';
+// import 
+
 export const order = [
 	'employment',
 	'projects',
@@ -9,24 +15,47 @@ export const employment = [
 	{
 		title: 'Software Engineer II',
 		name: 'Space Ground System Solutions',
-		dates: 'June 2019 - July 2021',
+		dates: '06/19 - 07/21',
 		blurb: 'Developed full stack web applications, chosen to serve as temp project lead for 3 months.',
+		image: { 
+			href: 'https://www.sgss.com/wp-content/uploads/2016/06/SGSS.jpg',
+			w: 100,
+			h: 50
+		},
+		links: [
+			{
+				text: 'COMPANY',
+				icon: 'external',
+				href: 'https://www.sgss.com/'
+			}
+		],
 		bullets: [
-			'Worked on a web application for space-ground command & control systems, using React w/ Redux, Java, and C++ to display & interact with high latency, error sensitive ground site information',
-			'Chosen to fill in as project lead during a 3-month planned leave of absence for a team of 6 other full time engineers. Responsible for leading Agile ceremonies, clearing blockers, meeting with stakeholders, UX and system design for new features, designing and delivering training, and more.',
+			'Worked on a web interface for space-ground command & control systems, using React w/ Redux, Java, and C++ to display & interact with ground site data across the full stack.',
+			'Chosen to fill in as project lead during a 3-month planned leave of absence for a team of 6 other full time engineers. Responsible for leading Agile ceremonies, clearing blockers, meeting with stakeholders, basic UX and system design for new features, designing and delivering training, and more.',
 			'Implemented ~12 significant full stack features, using description documents from software architects for some, and leading the requirements gathering and UX design processes myself for others.',
-			'Owned implementation of systems used by many government satellite programs, contributing to an essential piece of the Naval Research Laboratory’s response to specific DoD-wide standardization and modernization mandates for space related software.',
-			'Regularly and deeply involved in testing, such as being tapped to bring Jest unit tests to an existing code base, or design and lead implementation of plans for functional testing.'
+			'Regularly and deeply involved in testing, such as being tapped to bring Jest unit tests to an existing code base, or designing and leading implementation of functional testing plans.'
 		]
 	},
 	{
 		title: 'Automation Tools Intern',
 		name: 'Fujitsu Network Communications',
-		dates: 'May 2018 - August 2018',
+		dates: '06-08/18',
+		image: {
+			href: 'https://media-exp1.licdn.com/dms/image/C4D0BAQEhJ7dE466ATg/company-logo_200_200/0/1595535008634?e=1637193600&v=beta&t=QuLqAjr81P4lmtEj225vPwJFR_3piUtpJW3t54QXd5U',
+			w: 50,
+			h: 50 
+		},
+		links: [
+			{
+				text: 'COMPANY',
+				icon: 'external',
+				href: 'https://www.fujitsu.com/us/products/network/'
+			}
+		],
 		blurb: 'Planned and implemented basic full stack web tool for data collection.',
 		bullets: [
 			'Worked on an internal web tool for ~50 project managers to complete a new procedure and collect procedural data for executive analysis using Java, Spring MVC, and Javascript.',
-			'Was responsible for carrying out the full software engineering process, from talking to stakeholders, to writing the SRS document, to implementation and feedback.'
+			'Was responsible for carrying out the full software engineering process, from talking to stakeholders, to writing the SRS document, to implementation and feedback.',
 		]
 	}
 ];
@@ -34,24 +63,44 @@ export const employment = [
 export const projects = [
 	{
 		name: 'Origami Odyssey',
-		link: 'https://github.com/robbwdoering/origamiodyssey',
-		sourceLink: 'https://origamiodyssey.herokuapp.com/',
+		links: [
+			{
+				text: 'SITE (may take ~30s to spin up)',
+				icon: 'external',
+				href: 'https://origamiodyssey.herokuapp.com/'
+			},
+			{
+				text: 'GITHUB',
+				icon: 'github',
+				href: 'https://github.com/robbwdoering/origamiodyssey'
+			}
+		],
 		blurb: 'Built a React webapp that delivers origami instructions using a novel method: 3D simulations.',
 		bullets: [
-			'A React SPA built to teach origami, the art of folding paper.',
-			'It uses animated 3D simulations with temporal & spatial controls, hierarchical annotations of folds, and hobbyist augmentations to improve learner performance on audience specific self-assessments.',
-			'Each specific method in that sentence is supported by research I did as part of GaTech’s CS6460: Educational Technology.'
+			'A React SPA site built to teach origami, the art of folding paper into complex 3D models.',
+			'Designed a set of novel algorithms for simulating the folding motions of a piece paper in 3D space, based on the chosen instructions.',
+			'Extended the .FOLD file format devised by Erik Demaine at MIT for use in describing a set of sequential origami instructions, as opposed to just one completed, static, model.',
+			'Each specific method used in this application is supported by research I did as part of GaTech’s CS6460: Educational Technology.'
 		],
 		technologies: ['Javascript', 'React', 'Redux', 'Three.js', 'react-three-fiber', 'Material-UI']
 	},
 	{
 		name: 'Bellum.ai',
-		link: 'https://github.com/robbwdoering/bellum.ai',
-		bullets: [
-			'[IN PROGRESS] A React SPA built to provide tools for the notoriously complex tabletop wargame, Warhammer 40k. It uses 3D simulation of the board, complex statistical modeling and analysis, and customizable visualizations to ease and speed along the game. This required a regex parser to read complex “army lists” into json objects for manipulation using a rules-translation schema I designed.'
+		links: [
+			{
+				text: 'GITHUB',
+				icon: 'github',
+				href: 'https://github.com/robbwdoering/bellum.ai'
+			},
 		],
 		blurb: 'Building a React webapp to teach and analyze a complex boardgame called Warhammer 40k.',
-		technologies: ['Javascript', 'React', 'Redux', 'Three.js', 'react-three-fiber', 'D3.js', 'Auth0', 'Semantic UI']
+		bullets: [
+			'[IN PROGRESS] Building a React SPA to provide tools for the notoriously complex tabletop wargame, Warhammer 40k, in order to speed up the game and give tactical advice.',
+			'Designed a performant system for offloading the most intensive probability calculations to a RESTful stateless backend written in Express.js.',
+			'Built a 3D simulation of the board, allowing the user to track the location of the many models in play.',
+			'In order to integrate with existing tools, I wrote a regex parser to read complex plaintext “army lists” into json objects for manipulation using a rules-translation schema I designed.'
+		],
+		technologies: ['Javascript', 'React', 'Express.js', 'Redux', 'Three.js', 'react-three-fiber', 'D3.js', 'Auth0', 'Semantic UI']
 	},
 	{
 		name: 'Data Visualization in VR',
@@ -194,7 +243,7 @@ export const skills = [
 	{
 		name: 'Inkscape',
 		desc:
-			'I have used Inkscape for fun since I was a child, and for simple graphic design work intermittently, such as putting together posters for school orgs, building detailed mock-ups of new UX, and even creating some new icons.',
+			'I have used Inkscape for fun since I was a child, and for simple graphic design work intermittently, such as putting together posters for school orgs, building detailed mock-ups of new UX at work, and even creating/tweaking icons when called for.',
 		level: 'Advanced',
 		category: 'tools'
 	},
@@ -277,7 +326,7 @@ export const skills = [
 	},
 	{
 		name: 'GMSEC',
-		desc: 'I have built many components that communicate via the GMSEC bus, and feel I understand the ',
+		desc: 'I have built many components that communicate via the GMSEC bus, and feel comfortable working with the relevant standards.',
 		level: 'Functional',
 		category: 'libraries'
 	},
@@ -341,7 +390,12 @@ export const education = [
 	{
 		name: 'Vanderbilt University',
 		date: 'Spring 2019',
-		blurb: 'B.S. in Computer Science',
+		blurb: 'Earned a B.S. in Computer Science.',
+		image: { 
+			href: vanderbiltLogo,
+			w: 50,
+			h: 50
+		},
 		bullets: [
 			'Earned a B.S. in Computer Science, with minors in Spanish and Philosophy.',
 			'Served as an executive for the Vanderbilt Data Science club and the Wilderness Skills 101 organization.'
@@ -350,9 +404,22 @@ export const education = [
 	{
 		name: 'Georgia Institute of Technology',
 		date: 'EXPECTED Fall 2022',
-		blurb: 'Ongoing M.S. in Computer Science, specialized in Interactive Intelligence',
+		blurb: 'Pursuing a **M.S. in Computer Science** with a specializion in Interactive Intelligence',
+		image: { 
+			href: 'https://brand.gatech.edu/sites/default/files/inline-images/gt-logo-gold.png',
+			w: 100,
+			h: 50
+		},
+		links: [
+			{
+				icon: 'external',
+				text: 'PROGRAM',
+				href: ''
+			}	
+		],
 		bullets: [
-			'Currently pursuing an online M.S. in Computer Science, with a specialization in Interactive Intelligence.'
+			'Currently pursuing an online M.S. in Computer Science, with a specialization in Interactive Intelligence.',
+			'This is a 10-course program known colloqiually as OMSCS, of which I have completed 4: Networks, OS, Educational Technology, and Human-Computer Interaction.'
 		]
 	}
 ];
@@ -372,6 +439,16 @@ export const contactLines = [
 		name: 'GITHUB',
 		href: 'https://github.com/robbwdoering',
 		icon: 'github'
+	},
+	{
+		name: '.pdf',
+		href: resumePDF,
+		icon: 'file pdf'
+	},
+	{
+		name: '.docx',
+		href: resumeDOCX,
+		icon: 'file word'
 	}
 ];
 
