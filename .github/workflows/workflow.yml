@@ -50,7 +50,9 @@ jobs:
 
       - name: Unpack artifacts 
         run: mv ./artifacts_from_ubuntu/* ./
-        run: rm ./artifacts_from_ubuntu -rf
+
+      - name: Delete old folder
+        run: rm ./artifacts_from_ubuntu
 
       - name: "Uploading..."
         uses: jakejarvis/s3-sync-action@master
