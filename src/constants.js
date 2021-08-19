@@ -77,9 +77,9 @@ export const projects = [
 		],
 		blurb: 'Built a React webapp that delivers origami instructions using a novel method: 3D simulations.',
 		bullets: [
-			'A React SPA site built to teach origami, the art of folding paper into complex 3D models.',
-			'Designed a set of novel algorithms for simulating the folding motions of a piece paper in 3D space, based on the chosen instructions.',
-			'Extended the .FOLD file format devised by Erik Demaine at MIT for use in describing a set of sequential origami instructions, as opposed to just one completed, static, model.',
+			'A React SPA site built to teach [origami](https://en.wikipedia.org/wiki/Origami), the art of folding paper into complex 3D models.',
+			'Designed [a set of novel algorithms](https://github.com/robbwdoering/origamiodyssey/blob/main/src/anim/Paper.js) for simulating the folding motions of a piece paper in 3D space, based on the chosen instructions.',
+			'Extended the [.fold file format](http://erikdemaine.org/papers/FOLD_CGW2016/) for use in describing a set of sequential origami instructions, as opposed to just one completed, static, model.',
 			'Each specific method used in this application is supported by research I did as part of GaTech’s CS6460: Educational Technology.'
 		],
 		technologies: ['Javascript', 'React', 'Redux', 'Three.js', 'react-three-fiber', 'Material-UI']
@@ -95,10 +95,10 @@ export const projects = [
 		],
 		blurb: 'Building a React webapp to teach and analyze a complex boardgame called Warhammer 40k.',
 		bullets: [
-			'[IN PROGRESS] Building a React SPA to provide tools for the notoriously complex tabletop wargame, Warhammer 40k, in order to speed up the game and give tactical advice.',
+			'[IN PROGRESS] Building a React SPA to provide tools for the notoriously complex tabletop wargame, [Warhammer 40k](https://en.wikipedia.org/wiki/Warhammer_40,000), in order to speed up the game and give tactical advice.',
 			'Designed a performant system for offloading the most intensive probability calculations to a RESTful stateless backend written in Express.js.',
 			'Built a 3D simulation of the board, allowing the user to track the location of the many models in play.',
-			'In order to integrate with existing tools, I wrote a regex parser to read complex plaintext “army lists” into json objects for manipulation using a rules-translation schema I designed.'
+			'In order to integrate with existing tools, I wrote [a regex parser](https://github.com/robbwdoering/bellum.ai/blob/master/react-ui/src/war/parsingUtils.js#L51-L376) to read complex plaintext “army lists” into json objects for manipulation using [a rules-translation](https://github.com/robbwdoering/bellum.ai/blob/master/docs/meaning_objects.md) schema I designed.'
 		],
 		technologies: ['Javascript', 'React', 'Express.js', 'Redux', 'Three.js', 'react-three-fiber', 'D3.js', 'Auth0', 'Semantic UI']
 	},
@@ -404,7 +404,7 @@ export const education = [
 	{
 		name: 'Georgia Institute of Technology',
 		date: 'EXPECTED Fall 2022',
-		blurb: 'Pursuing a **M.S. in Computer Science** with a specializion in Interactive Intelligence',
+		blurb: 'Pursuing a M.S. in Computer Science with a specializion in Interactive Intelligence',
 		image: { 
 			href: 'https://brand.gatech.edu/sites/default/files/inline-images/gt-logo-gold.png',
 			w: 100,
@@ -419,7 +419,7 @@ export const education = [
 		],
 		bullets: [
 			'Currently pursuing an online M.S. in Computer Science, with a specialization in Interactive Intelligence.',
-			'This is a 10-course program known colloqiually as OMSCS, of which I have completed 4: Networks, OS, Educational Technology, and Human-Computer Interaction.'
+			'This is a 10-course non-thesis graduate program known colloqiually as OMSCS, of which I have completed 4: Networks, OS, Educational Technology, and Human-Computer Interaction.'
 		]
 	}
 ];
