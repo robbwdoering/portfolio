@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build Assets
-        run: npm run build
+        run: CI=false npm run build #Set CI to false so warnings aren't treated as errors
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v1
