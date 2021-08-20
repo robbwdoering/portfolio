@@ -65,9 +65,9 @@ export const projects = [
 		name: 'Origami Odyssey',
 		links: [
 			{
-				text: 'SITE (may take ~30s to spin up)',
+				text: 'SITE',
 				icon: 'external',
-				href: 'https://origamiodyssey.herokuapp.com/'
+				href: 'https://origamiodyssey.com/'
 			},
 			{
 				text: 'GITHUB',
