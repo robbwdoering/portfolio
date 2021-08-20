@@ -15,7 +15,7 @@ export const employment = [
 	{
 		title: 'Software Engineer II',
 		name: 'Space Ground System Solutions',
-		dates: '06/19 - 07/21',
+		dates: '06/19 - 06/21',
 		blurb: 'Developed full stack web applications, chosen to serve as temp project lead for 3 months.',
 		image: { 
 			href: 'https://www.sgss.com/wp-content/uploads/2016/06/SGSS.jpg',
