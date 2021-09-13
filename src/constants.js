@@ -197,7 +197,7 @@ export const skills = [
 	{
 		name: 'CSS',
 		desc:
-			'I have used CSS professionally and for personal projects, and feel comfortable with a variety of selectors and rules. I have tried vanilla CSS and CSS-as-code (read: CSS defined in JS), but prefer the former.',
+			'I have used CSS professionally and for personal projects, and feel comfortable with a variety of selectors and rules. I have tried vanilla CSS and CSS-in-JS, but honestly prefer the former.',
 		level: 'Advanced',
 		category: 'languages'
 	},
@@ -246,7 +246,7 @@ export const skills = [
 	{
 		name: 'Jira',
 		desc:
-			'I have used the Jira suite professionally, and as a acting project lead became very familiar with managing this system.',
+			'I have used the Jira suite professionally, and as an acting project lead became very familiar with managing this system.',
 		level: 'Advanced',
 		category: 'tools'
 	},
@@ -429,7 +429,7 @@ export const education = [
 		],
 		bullets: [
 			'Currently pursuing an online M.S. in Computer Science, with a specialization in Interactive Intelligence.',
-			'This is a 10-course non-thesis graduate program known colloqiually as OMSCS, of which I have completed 4: Networks, OS, Educational Technology, and Human-Computer Interaction.'
+			'This is a 10-course non-thesis graduate program known colloqiually as [OMSCS](https://omscs.gatech.edu/explore-oms-cs), built to match the on-campus option. I have completed 4 courses: Networks, OS, Educational Technology, and Human-Computer Interaction.'
 		]
 	}
 ];
