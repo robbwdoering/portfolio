@@ -65,6 +65,11 @@ export const projects = [
 		name: 'Origami Odyssey',
 		links: [
 			{
+				text: 'PAPER',
+				icon: 'external',
+				href: 'https://github.com/robbwdoering/origamiodyssey/blob/main/CS6460%20Proposal.pdf'
+			},
+			{
 				text: 'SITE',
 				icon: 'external',
 				href: 'https://origamiodyssey.com/'
@@ -78,7 +83,7 @@ export const projects = [
 		blurb: 'Built a React webapp that delivers origami instructions using a novel method: 3D simulations.',
 		bullets: [
 			'A React SPA site built to teach [origami](https://en.wikipedia.org/wiki/Origami), the art of folding paper into complex 3D models.',
-			'Designed [a set of novel algorithms](https://github.com/robbwdoering/origamiodyssey/blob/main/src/anim/Paper.js) for simulating the folding motions of a piece paper in 3D space, based on the chosen instructions.',
+			'Designed [a set of novel algorithms](https://github.com/robbwdoering/origamiodyssey/blob/main/client/src/anim/Paper.js) for simulating the folding motions of a piece paper in 3D space, based on the chosen instructions.',
 			'Extended the [.fold file format](http://erikdemaine.org/papers/FOLD_CGW2016/) for use in describing a set of sequential origami instructions, as opposed to just one completed, static, model.',
 			'Each specific method used in this application is supported by research I did as part of GaTech’s CS6460: Educational Technology.'
 		],
