@@ -41,7 +41,7 @@ export const employment = [
 		name: 'Fujitsu Network Communications',
 		dates: '06-08/18',
 		image: {
-			href: 'https://media-exp1.licdn.com/dms/image/C4D0BAQEhJ7dE466ATg/company-logo_200_200/0/1595535008634?e=1637193600&v=beta&t=QuLqAjr81P4lmtEj225vPwJFR_3piUtpJW3t54QXd5U',
+			href: 'https://pbs.twimg.com/profile_images/1448725012408672261/75fCwF0w_400x400.jpg',
 			w: 50,
 			h: 50 
 		},
@@ -83,6 +83,26 @@ export const projects = [
 			'Each specific method used in this application is supported by research I did as part of GaTech’s CS6460: Educational Technology.'
 		],
 		technologies: ['Javascript', 'React', 'Redux', 'Three.js', 'react-three-fiber', 'Material-UI']
+	},
+	{
+		name: 'SafetyRouter',
+		links: [
+			{
+				text: 'SITE',
+				icon: 'external',
+				href: 'https://safetyrouter.robbwdoering.com/'
+			}
+		],
+		blurb: 'Worked in a team of 6 to create a full stack application that analyzes U.S. road accident data and predicts the relative danger of user routes.',
+		bullets: [
+			'As part of Georgia Institute of Technology\'s [Data and Visual Analytics course](https://omscs.gatech.edu/cse-6242-data-visual-analytics), I spent a semester working on a team of 6 to build a full stack application.',
+			'Our system analyses a dataset of over 1.5 million accidents, using custom clustering and bayesian probability functions to quantify road danger in the current weather conditions.',
+			'Took ownership of the deployment and operations of the app, working with AWS, Dokku (a Heroku-like OSS), Docker, and Github actions.',
+			'Setup a SPA Javascript/React frontend using Material-UI, and a python API backend using Flask and pyscopg2.',
+			'Setup a custom spatial database that allowed for powerful semantic queries, using PostgreSQL and PostGIS.',
+			'Created an interactive, responsive map in leaflet.js that allows the viewing of routes and accident hotspots.'
+		],
+		technologies: ['Javascript', 'React', 'Material-UI']
 	},
 	{
 		name: 'Bellum.ai',
