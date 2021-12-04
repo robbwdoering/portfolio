@@ -31,9 +31,9 @@ export const employment = [
 		],
 		bullets: [
 			'Worked on a web interface for space-ground command & control systems, using React w/ Redux, Java, and C++ to display & interact with ground site data across the full stack.',
+			'Implemented ~12 significant full stack features, either using description documents from software architects and or leading the requirements gathering and UX design processes myself.',
 			'Chosen to fill in as project lead during a 3-month planned leave of absence for a team of 6 other full time engineers. Responsible for leading Agile ceremonies, clearing blockers, meeting with stakeholders, basic UX and system design for new features, designing and delivering training, and more.',
-			'Implemented ~12 significant full stack features, using description documents from software architects for some, and leading the requirements gathering and UX design processes myself for others.',
-			'Regularly and deeply involved in testing, such as being tapped to bring Jest unit tests to an existing code base, or designing and leading implementation of functional testing plans.'
+			'Brought automated Jest unit tests to an existing code base, and was regularly tapped to help coordinate functional testing of that same application.'
 		]
 	},
 	{
@@ -54,7 +54,7 @@ export const employment = [
 		],
 		blurb: 'Planned and implemented basic full stack web tool for data collection.',
 		bullets: [
-			'Worked on an internal web tool for ~50 project managers to complete a new procedure and collect procedural data for executive analysis using Java, Spring MVC, and Javascript.',
+			'Created an internal web tool for ~50 project managers to complete a new procedure and collect procedural data for executive analysis using Java, Spring MVC, and Javascript.',
 			'Was responsible for carrying out the full software engineering process, from talking to stakeholders, to writing the SRS document, to implementation and feedback.',
 		]
 	}
@@ -150,7 +150,7 @@ export const projects = [
 			'Setup a custom spatial database that allowed for powerful semantic queries, using PostgreSQL and PostGIS.',
 			'Created an interactive, responsive map in leaflet.js that allows the viewing of routes and accident hotspots.'
 		],
-		technologies: ['Javascript', 'React', 'Material-UI']
+		technologies: ['Javascript', 'Python', 'React', 'Material-UI', 'Flask', 'Leaflet', 'D3.js']
 	},
 	{
 		name: 'Data Visualization in VR',
