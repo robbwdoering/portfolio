@@ -2,6 +2,7 @@ import React, { useState, useRef, createRef, useMemo, useEffect } from 'react';
 import { Card, Table, Button, Grid, Icon, Image, Ref, Label, List, Divider } from 'semantic-ui-react';
 import { useSpring, animated } from 'react-spring';
 import ReactMarkdown from 'react-markdown';
+import ImageGallery from 'react-image-gallery';
 
 import { projects, employment, skills, education, contactLines, levelBlurbs } from './constants';
 
@@ -24,6 +25,7 @@ export const DetailsCard = props => {
 		blurb,
 		fullText,
 		image,
+		image_list,
 		links,
 		isTable
 	} = props;
@@ -49,7 +51,8 @@ export const DetailsCard = props => {
 
 		if (links && isActive) newHeight += 28; // Add space for the links row if present
 
-		return newHeight > 600 ? 600 : newHeight;
+		// return newHeight > 600 ? 600 : newHeight;
+		return newHeight;
 	};
 
 	const handleSkillClick = subIdx => {
@@ -65,6 +68,11 @@ export const DetailsCard = props => {
 				selectRow(subIdx);
 			}
 		}, 250);
+	};
+
+	const handleGalleryClick = event => {
+		console.log('handleGalleryClick', event, !!event.stopPropagation);
+		event.stopPropagation();
 	};
 
 	const renderBlurb = () => {
@@ -93,7 +101,11 @@ export const DetailsCard = props => {
 								<Table.Row
 									id={`skill-row-${index}-${idx}`}
 									className={`${selectedRow === idx ? 'selected-row' : ''}`}
-									onClick={(e) => {e.preventDefault(); e.stopPropagation(); selectRow(idx)}}
+									onClick={e => {
+										e.preventDefault();
+										e.stopPropagation();
+										selectRow(idx);
+									}}
 								>
 									<Table.Cell>
 										{skill.image && <Image src={skill.image} />}
@@ -178,7 +190,21 @@ export const DetailsCard = props => {
 				{image && <AnimatedImage width={image.w} height={image.h} style={imageSpring} src={image.href} />}
 			</div>
 			<AnimatedContent style={fullTextSpring}>
-				<div ref={fulltextRef} className="full-text-content">
+				<div ref={fulltextRef} className={`full-text-content ${image_list ? 'content-tall' : ''}`}>
+					{image_list && (
+						<div onClick={handleGalleryClick} >
+							<ImageGallery
+								items={image_list}
+								onClick={handleGalleryClick}
+								onThumbnailClick={handleGalleryClick}
+								stopPropagation
+								showIndex={true}
+								showPlayButton={false}
+								showFullscreenButton={false}
+								showThumbnails={false}
+							/>
+						</div>
+					)}
 					{renderFullText()}
 				</div>
 				<div ref={contentRef} className="blurb-content">
@@ -188,7 +214,7 @@ export const DetailsCard = props => {
 			{links && (
 				<animated.div style={linkSpring} className="link-container">
 					{links.map(link => (
-						<Button compact icon={link.icon} href={link.href} content={link.text} target="_blank" />
+						<Button compact icon={link.icon} href={link.href} content={link.text} onClick={e => e.stopPropagation()} target="_blank" />
 					))}
 				</animated.div>
 			)}

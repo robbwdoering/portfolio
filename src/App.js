@@ -5,9 +5,10 @@ import { useSpring, useSpringRef, useTransition, useChain, config, animated } fr
 import { order, projects, employment, skills, education, contactLines, skillLevels } from './constants';
 import { DetailsCard } from './DetailsCard';
 
-import profile_pic from './profile_pic.jpg';
+import profile_pic from './files/profile_pic.jpg';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
+import "react-image-gallery/styles/css/image-gallery.css"
 
 export default props => {
 	const [windowWidth, setWindowWidth] = useState(0);

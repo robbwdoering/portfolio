@@ -175,16 +175,16 @@ body {
 .app-root .details-container .card.ui .full-text-content {
   padding: 0 1rem;
   flex: 1;
-  /*display: absolute;*/
+  max-height: 400px !important;
+  background-color:  #202022 !important;
+}
+
+.app-root .details-container .card.ui .full-text-content.content-tall {
+  max-height: 700px !important;
 }
 
 .app-root .details-container .card.ui.table-card .full-text-content {
   overflow-y: scroll;
-}
-
-.app-root .details-container .card.ui .full-text-content {
-  max-height: 400px !important;
-  background-color:  #202022 !important;
 }
 
 .app-root .card.ui .header {
@@ -239,6 +239,11 @@ body {
 .app-root .details-container .card.ui .content table.skills-table tr.selected-row {
   font-weight: bold;
   background-color: var(--greyFive);
+}
+
+.app-root .image-gallery .image-gallery-slide .image-gallery-description {
+  bottom: 0px;
+
 }
 
 /* MOBILE STYLING */

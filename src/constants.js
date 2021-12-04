@@ -87,6 +87,32 @@ export const projects = [
 			'Extended the [.fold file format](http://erikdemaine.org/papers/FOLD_CGW2016/) for use in describing a set of sequential origami instructions, as opposed to just one completed, static, model.',
 			'Each specific method used in this application is supported by research I did as part of GaTech’s CS6460: Educational Technology.'
 		],
+		image_list: [
+			{
+				'original': process.env.PUBLIC_URL + '/oo_modelselect.png',
+				'thumbnail': process.env.PUBLIC_URL + '/oo_modelselect_thumb.png',
+				'originalHeight': 300,
+				'description': 'Users can select from a variety of different traditional origami models to fold.'
+			},
+			{
+				'original': process.env.PUBLIC_URL + '/oo_butterfly.png',
+				'thumbnail': process.env.PUBLIC_URL + '/oo_butterfly_thumb.png',
+				'originalHeight': 300,
+				'description': 'Users follow along as a 3D shape shows them how to fold the model step-by-step.'
+			},
+			{
+				'original': process.env.PUBLIC_URL + '/oo_heart.png',
+				'thumbnail': process.env.PUBLIC_URL + '/oo_heart_thumb.png',
+				'originalHeight': 300,
+				'description': 'The left side of the screen contains the hierarchical instructions, which allow for quick navigation and replaying of important sequences.'
+			},
+			{
+				'original': process.env.PUBLIC_URL + '/oo_complete.png',
+				'thumbnail': process.env.PUBLIC_URL + '/oo_complete_thumb.png',
+				'originalHeight': 300,
+				'description': 'This system uses a custom algorithm to derive these shapes from JSON instruction files, and works for even somewhat complex models.'
+			}
+		],
 		technologies: ['Javascript', 'React', 'Redux', 'Three.js', 'react-three-fiber', 'Material-UI']
 	},
 	{
@@ -98,6 +124,23 @@ export const projects = [
 				href: 'https://safetyrouter.robbwdoering.com/'
 			}
 		],
+		image_list: [
+			{
+				'original': process.env.PUBLIC_URL + '/sr_map.png',
+				'originalHeight': 300,
+				'description': 'Users can input any two U.S. locations and see Google Maps routes and nearby accident hotspots on this interactive map.'
+			},
+			{
+				'original': process.env.PUBLIC_URL + '/sr_viz.png',
+				'originalHeight': 300,
+				'description': 'A "safety score" is calculated that estimates the danger of the route and all alternatives, and graphs are shown to inspect relevant accident records in depth.'
+			},
+			{
+				'original': process.env.PUBLIC_URL + '/sr_cluster.png',
+				'originalHeight': 300,
+				'description': 'Users can also inspect each accident hotspot shown on the map in detail.'
+			},
+		],
 		blurb: 'Worked in a team of 6 to create a full stack application that analyzes U.S. road accident data and predicts the relative danger of user routes.',
 		bullets: [
 			'As part of Georgia Institute of Technology\'s [Data and Visual Analytics course](https://omscs.gatech.edu/cse-6242-data-visual-analytics), I spent a semester working on a team of 6 to build a full stack application.',
@@ -108,24 +151,6 @@ export const projects = [
 			'Created an interactive, responsive map in leaflet.js that allows the viewing of routes and accident hotspots.'
 		],
 		technologies: ['Javascript', 'React', 'Material-UI']
-	},
-	{
-		name: 'Bellum.ai',
-		links: [
-			{
-				text: 'GITHUB',
-				icon: 'github',
-				href: 'https://github.com/robbwdoering/bellum.ai'
-			},
-		],
-		blurb: 'Building a React webapp to teach and analyze a complex boardgame called Warhammer 40k.',
-		bullets: [
-			'[IN PROGRESS] Building a React SPA to provide tools for the notoriously complex tabletop wargame, [Warhammer 40k](https://en.wikipedia.org/wiki/Warhammer_40,000), in order to speed up the game and give tactical advice.',
-			'Designed a performant system for offloading the most intensive probability calculations to a RESTful stateless backend written in Express.js.',
-			'Built a 3D simulation of the board, allowing the user to track the location of the many models in play.',
-			'In order to integrate with existing tools, I wrote [a regex parser](https://github.com/robbwdoering/bellum.ai/blob/master/react-ui/src/war/parsingUtils.js#L51-L376) to read complex plaintext “army lists” into json objects for manipulation using [a rules-translation](https://github.com/robbwdoering/bellum.ai/blob/master/docs/meaning_objects.md) schema I designed.'
-		],
-		technologies: ['Javascript', 'React', 'Express.js', 'Redux', 'Three.js', 'react-three-fiber', 'D3.js', 'Auth0', 'Semantic UI']
 	},
 	{
 		name: 'Data Visualization in VR',
@@ -144,6 +169,36 @@ export const projects = [
 		],
 		blurb: 'Simple porfolio site built for extensibility and modularity, deployed automatically via Github actions.',
 		technologies: ['Javascript', 'React', 'react-spring', 'Semantic UI']
+	},
+	{
+		name: 'Bellum.ai',
+		links: [
+			{
+				text: 'GITHUB',
+				icon: 'github',
+				href: 'https://github.com/robbwdoering/bellum.ai'
+			},
+		],
+		image_list: [
+			{
+				'original': process.env.PUBLIC_URL + '/be_shootingoverview.png',
+				'originalHeight': 300,
+				'description': 'This is an example of the application during a game, where it simulates the current board in 3D and provides tools, statistics, and suggestions to the user for the current situation.'
+			},
+			{
+				'original': process.env.PUBLIC_URL + '/be_splash.png',
+				'originalHeight': 300,
+				'description': 'The splash page for the site shows off the game board to grab user attention, as it is composed of thousands of individually controlled points that adapt to gameplay.'
+			}
+		],
+		blurb: 'Building a React webapp to teach and analyze a complex boardgame called Warhammer 40k.',
+		bullets: [
+			'[IN PROGRESS] Building a React SPA to provide tools for the notoriously complex tabletop wargame, [Warhammer 40k](https://en.wikipedia.org/wiki/Warhammer_40,000), in order to speed up the game and give tactical advice.',
+			'Designed a performant system for offloading the most intensive probability calculations to a RESTful stateless backend written in Express.js.',
+			'Built a 3D simulation of the board, allowing the user to track the location of the many models in play.',
+			'In order to integrate with existing tools, I wrote [a regex parser](https://github.com/robbwdoering/bellum.ai/blob/master/react-ui/src/war/parsingUtils.js#L51-L376) to read complex plaintext “army lists” into json objects for manipulation using [a rules-translation](https://github.com/robbwdoering/bellum.ai/blob/master/docs/meaning_objects.md) schema I designed.'
+		],
+		technologies: ['Javascript', 'React', 'Express.js', 'Redux', 'Three.js', 'react-three-fiber', 'D3.js', 'Auth0', 'Semantic UI']
 	}
 ];
 
@@ -292,7 +347,7 @@ export const skills = [
 	{
 		name: 'Python',
 		desc:
-			'I was taught Python in university, and have used it for simpler personal project and in the workplace. It has never been my primary language, so being productive in it is a process that still involves a lot of googling for syntax. In a vacuum, Python is my preferred language for CLI scripting.',
+			'I was taught Python in university, and have used it frequently to supplement many projects, such as building a Flask REST API or a Pandas data ingest script. In a vacuum, Python is my preferred language for CLI scripting.',
 		level: 'Functional',
 		category: 'languages'
 	},
@@ -454,7 +509,7 @@ export const education = [
 		],
 		bullets: [
 			'Currently pursuing an online M.S. in Computer Science, with a specialization in Interactive Intelligence.',
-			'This is a 10-course non-thesis graduate program known colloqiually as [OMSCS](https://omscs.gatech.edu/explore-oms-cs), built to match the on-campus option. I have completed 4 courses: Networks, OS, Educational Technology, and Human-Computer Interaction.'
+			'This is a 10-course non-thesis graduate program known colloqiually as [OMSCS](https://omscs.gatech.edu/explore-oms-cs), built to match the on-campus option. I have completed six courses: Networks, OS, Educational Technology, Human-Computer Interaction, AI, and Visual Analytics.'
 		]
 	}
 ];
