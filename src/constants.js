@@ -154,21 +154,29 @@ export const projects = [
 	},
 	{
 		name: 'Data Visualization in VR',
-		bullets: [
-			'For my Vanderbilt senior project, I worked with a professor on his research quantifying the benefits of visualizing, selecting, and creating data in VR over 2D options.'
+		image_list: [
+			{
+				'original': process.env.PUBLIC_URL + '/dvr_overview.png',
+				'originalHeight': 300
+			},
+			{
+				'original': process.env.PUBLIC_URL + '/dvr_spheres.png',
+				'originalHeight': 300,
+				'description': 'Part of the investigation involved evaluating different selection mechanisms.'
+			},
+			{
+				'original': process.env.PUBLIC_URL + '/dvr_multishape.png',
+				'originalHeight': 300,
+				'description': 'Of the mechanisms that we had time to implement, multishape was the most promising.'
+			},
 		],
-		blurb: 'Built research tools in Unity for quantifying the benefits of VR tech.',
+		bullets: [
+			'For my Vanderbilt senior project, I worked with a professor and a team of 4 on his research quantifying the benefits of visualizing, selecting, and creating data in VR over 2D options.',
+			'The above slides show some of the results of an initial investigation using the tool.'
+
+		],
+		blurb: 'Worked with a professor on building research tools in Unity for quantifying the benefits of VR tech for data visualization.',
 		technologies: ['C#', 'Unity', 'Oculus', 'Blender']
-	},
-	{
-		name: 'This site!',
-		bullets: [
-			'Simple portfolio site built with a separation between styling and content, so it could easily be adapted or built upon by others.',
-			'Animations and transitions done using [react-spring](https://react-spring.io/basics), a fantastic library for natural + interruptible animations.',
-			'Developed a basic CI/CD pipeline for ease of updates, which revolves around the use of Github Actions to deploy to an AWS bucket whenever changes are pushed to a production branch. '
-		],
-		blurb: 'Simple porfolio site built for extensibility and modularity, deployed automatically via Github actions.',
-		technologies: ['Javascript', 'React', 'react-spring', 'Semantic UI']
 	},
 	{
 		name: 'Bellum.ai',
@@ -199,6 +207,16 @@ export const projects = [
 			'In order to integrate with existing tools, I wrote [a regex parser](https://github.com/robbwdoering/bellum.ai/blob/master/react-ui/src/war/parsingUtils.js#L51-L376) to read complex plaintext “army lists” into json objects for manipulation using [a rules-translation](https://github.com/robbwdoering/bellum.ai/blob/master/docs/meaning_objects.md) schema I designed.'
 		],
 		technologies: ['Javascript', 'React', 'Express.js', 'Redux', 'Three.js', 'react-three-fiber', 'D3.js', 'Auth0', 'Semantic UI']
+	},
+	{
+		name: 'This site!',
+		bullets: [
+			'Simple portfolio site built with a separation between styling and content, so it could easily be adapted or built upon by others.',
+			'Animations and transitions done using [react-spring](https://react-spring.io/basics), a fantastic library for natural + interruptible animations.',
+			'Developed a basic CI/CD pipeline for ease of updates, which revolves around the use of Github Actions to deploy to an AWS bucket whenever changes are pushed to a production branch. '
+		],
+		blurb: 'Simple porfolio site built for extensibility and modularity, deployed automatically via Github actions.',
+		technologies: ['Javascript', 'React', 'react-spring', 'Semantic UI']
 	}
 ];
 
