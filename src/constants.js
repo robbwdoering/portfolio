@@ -150,7 +150,7 @@ export const projects = [
 			'Setup a custom spatial database that allowed for powerful semantic queries, using PostgreSQL and PostGIS.',
 			'Created an interactive, responsive map in leaflet.js that allows the viewing of routes and accident hotspots.'
 		],
-		technologies: ['Javascript', 'Python', 'React', 'Material-UI', 'Flask', 'Leaflet', 'D3.js']
+		technologies: ['Javascript', 'Python', 'React', 'Flask', 'Leaflet', 'D3.js', 'Material-UI']
 	},
 	{
 		name: 'Data Visualization in VR',
@@ -413,6 +413,13 @@ export const skills = [
 			'I have used WebSockets extensively, and am intimately familiar with the tradeoffs between this approach and making HTML requests.',
 		level: 'Advanced',
 		category: 'libraries'
+	},
+	{
+		name: 'CI/CD',
+		desc:
+			'I have implemented CI/CD for personal and academic environments, going as far as setting up Self-Hosted runners.',
+		level: 'Functional',
+		category: 'concepts'
 	},
 	{
 		name: 'GMSEC',
