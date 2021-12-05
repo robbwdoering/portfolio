@@ -31,7 +31,7 @@ export const employment = [
 		],
 		bullets: [
 			'Worked on a web interface for space-ground command & control systems, using React w/ Redux, Java, and C++ to display & interact with ground site data across the full stack.',
-			'Implemented ~12 significant full stack features, either using description documents from software architects and or leading the requirements gathering and UX design processes myself.',
+			'Implemented ~12 significant full stack features, using design documents for some and leading the requirements gathering and UX design processes myself for others.',
 			'Chosen to fill in as project lead during a 3-month planned leave of absence for a team of 6 other full time engineers. Responsible for leading Agile ceremonies, clearing blockers, meeting with stakeholders, basic UX and system design for new features, designing and delivering training, and more.',
 			'Brought automated Jest unit tests to an existing code base, and was regularly tapped to help coordinate functional testing of that same application.'
 		]
