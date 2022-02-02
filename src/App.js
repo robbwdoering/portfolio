@@ -184,7 +184,7 @@ export default props => {
 					<div className="name-container">
 						<div>
 							<h1 className="my_name"> Robb Doering </h1>
-							<h2> is looking for work. </h2>
+							<h2> 👋 Hi Dropbox! I reccomend you check out Origami Odyssey or Safety Router if you have the time :) </h2>
 							<p>
 								Full stack web developer | Space-ground C2 systems | Three.js based 3D simulations |
 								React, Redux, Javascript, Java, C, C++, Python
