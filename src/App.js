@@ -185,8 +185,7 @@ export default props => {
 						<div>
 							<h1 className="my_name"> Robb Doering </h1>
 							<p>
-								Full stack web developer | Space-ground C2 systems | Three.js based 3D simulations |
-								React, Redux, Javascript, Java, C, C++, Python
+                                                                Fullstack software engineer for Google Ads
 							</p>
 						</div>
 					</div>

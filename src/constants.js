@@ -1,6 +1,3 @@
-import resumePDF from './files/resume.pdf';
-import resumeDOCX from './files/resume.docx';
-
 import vanderbiltLogo from './files/vanderbilt.png';
 // import 
 
@@ -569,16 +566,6 @@ export const contactLines = [
 		name: 'GITHUB',
 		href: 'https://github.com/robbwdoering',
 		icon: 'github'
-	},
-	{
-		name: '.pdf',
-		href: resumePDF,
-		icon: 'file pdf'
-	},
-	{
-		name: '.docx',
-		href: resumeDOCX,
-		icon: 'file word'
 	}
 ];
 
