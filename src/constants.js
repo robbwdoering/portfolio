@@ -13,6 +13,21 @@ export const order = [
 
 export const employment = [
 	{
+		title: 'Software Engineer',
+		name: 'Google',
+		dates: '02/22 - Present',
+		blurb: 'Fullstack software engineer for Google Ads.',
+		image: { 
+			href: 'https://image.similarpng.com/very-thumbnail/2020/12/Flat-design-Google-logo-design-Vector-PNG.png',
+			w: 50,
+			h: 50 
+		},
+                links: [],
+		bullets: [
+                    'Fullstack software engineer for Google Ads.'
+                ]
+	},
+	{
 		title: 'Software Engineer II',
 		name: 'Space Ground System Solutions',
 		dates: '06/19 - 06/21',
