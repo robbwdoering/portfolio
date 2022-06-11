@@ -42,10 +42,10 @@ export const employment = [
 			}
 		],
 		bullets: [
-			'Worked on a web interface for space-ground command & control systems, using React w/ Redux, Java, and C++ to display & interact with ground site data across the full stack.',
-			'Implemented ~12 significant full stack features, using design documents for some and leading the requirements gathering and UX design processes myself for others.',
-			'Chosen to fill in as project lead during a 3-month planned leave of absence for a team of 6 other full time engineers. Responsible for leading Agile ceremonies, clearing blockers, meeting with stakeholders, basic UX and system design for new features, designing and delivering training, and more.',
-			'Brought automated Jest unit tests to an existing code base, and was regularly tapped to help coordinate functional testing of that same application.'
+			'Worked on a web application for satellite Telemetry, Tracking, and Control (TT&C) and Ground Resource Management (GRM) C2 systems.',
+			'Chosen to fill in as project lead during a 3-month planned leave of absence for a team of 5 other full time engineers. Responsible for leading agile ceremonies, clearing blockers, meeting with stakeholders, UX and system design for new features, designing and delivering training curricula, and more.',
+			'Implemented at least a dozen major new full stack features, using description documents from software architects for some, and leading the requirements gathering and UX design processes myself for others.',
+			'Regularly and deeply involved in testing, including designing automated tests for many existing components and being chosen to plan & execute functional testing.'
 		]
 	},
 	{
