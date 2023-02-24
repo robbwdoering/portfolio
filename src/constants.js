@@ -21,7 +21,10 @@ export const employment = [
 		},
                 links: [],
 		bullets: [
-                    'Fullstack software engineer for Google Ads.'
+            		'Modernize and enhance Google\'s multi-billion dollar/year AdSense product, focusing on the JavaScript "tag" logic and the rendering of new advertising formats across the stack.',
+            		'Dive deep into advanced JavaScript behavior for scripts that need to run in 2 million diverse environments across the world while remaining stable and effective.',
+            		'Develop features from start to finish across the stack at Google scale, a task that calls for extremely performant code and a solid understanding of complex deployment tools and development frameworks.',
+			'Perform A/B tests on billions of queries, verifying and providing artifacts for everything I accomplish via statistical analysis in Python notebooks and large proprietary tools.',
                 ]
 	},
 	{
@@ -559,7 +562,7 @@ export const contactLines = [
 	},
 	{
 		name: 'LINKEDIN',
-		href: 'https://www.linkedin.com/in/robb-doering-84165912a/',
+		href: 'https://www.linkedin.com/in/robb-d-84165912a/',
 		icon: 'linkedin'
 	},
 	{
